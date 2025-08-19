@@ -1,0 +1,766 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST KİTİ ANALİZ UYGULAMASI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .app-description {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .coordinate-info {
+            background: rgba(255, 165, 0, 0.2);
+            border: 2px solid #ffa500;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .coordinate-info h3 {
+            color: #ffa500;
+            margin-bottom: 10px;
+        }
+
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .camera-section {
+            flex: 2;
+            min-width: 600px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .results-section {
+            flex: 1;
+            min-width: 400px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #000;
+            border: 2px solid #444;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .rectangles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .fixed-rectangle {
+            position: absolute;
+            border: 3px solid rgba(255, 255, 0, 0.9);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 0, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        /* Sabit koordinatlar için CSS (1920x1080 => video container'a ölçeklenmiş) */
+        .rect-1 { left: 5.2%; top: 18.5%; width: 10.4%; height: 55.6%; }
+        .rect-2 { left: 20.8%; top: 18.5%; width: 10.4%; height: 55.6%; }
+        .rect-3 { left: 36.4%; top: 18.5%; width: 10.4%; height: 55.6%; }
+        .rect-4 { left: 52.1%; top: 18.5%; width: 10.4%; height: 55.6%; }
+        .rect-5 { left: 67.7%; top: 18.5%; width: 10.4%; height: 55.6%; }
+        .rect-6 { left: 83.3%; top: 18.5%; width: 10.4%; height: 55.6%; }
+
+        .rectangle-label {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgba(255, 255, 0, 0.9);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .rectangle-number {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffcc00;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .line-indicator {
+            width: 80%;
+            height: 2px;
+            background: rgba(255, 255, 0, 0.6);
+            margin: 5px 0;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        #startCamera {
+            background: linear-gradient(to right, #00c853, #009624);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 200, 83, 0.3);
+        }
+
+        #bottomButton {
+            display: none;
+            background: linear-gradient(to right, #2979ff, #2962ff);
+            color: white;
+            box-shadow: 0 4px 10px rgba(41, 121, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #photoModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            border: 3px solid #444;
+            border-radius: 15px;
+            z-index: 100;
+            display: none;
+            padding: 25px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        #photoModal img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #555;
+        }
+
+        #closeModal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff4444;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.7);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        #closeModal:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 68, 68, 0.2);
+        }
+
+        .modal-content {
+            text-align: center;
+        }
+
+        .loading {
+            display: none;
+            margin: 20px 0;
+            color: #29b6f6;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .spinner {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 5px solid #29b6f6;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+   
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        .result-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .positive {
+            background: linear-gradient(to right, #00c853, #009624);
+            color: white;
+        }
+
+        .negative {
+            background: linear-gradient(to right, #ff5252, #b33939);
+            color: white;
+        }
+
+        .invalid {
+            background: linear-gradient(to right, #bdbdbd, #757575);
+            color: white;
+        }
+
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .instructions h3 {
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .test-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .test-info div {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .test-info .positive { background: rgba(0, 200, 83, 0.3); }
+        .test-info .negative { background: rgba(255, 82, 82, 0.3); }
+        .test-info .invalid { background: rgba(189, 189, 189, 0.3); }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .error-message {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff4444;
+            color: #ff6666;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #00ff00;
+            color: #66ff66;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TEST KİTİ ANALİZ UYGULAMASI</h1>
+            <p>Gelişmiş renk tespiti ile hızlı ve güvenilir test sonuçları</p>
+        </header>
+
+        <div class="coordinate-info">
+            <h3>🎯 Test Kiti Analizi</h3>
+            <p>Test kitinizi sarı çerçeveler içindeki alanlara hizalayarak fotoğraf çekin.</p>
+        </div>
+        
+        <div class="app-container">
+            <div class="camera-section">
+                <h2 class="section-title">Test Kiti Tarama</h2>
+                <div id="video-container">
+                    <video id="video" autoplay playsinline></video>
+                    <div class="overlay" id="overlay"></div>
+                    <div class="rectangles-container" id="rectanglesContainer">
+                        <div class="fixed-rectangle rect-1">
+                            <div class="rectangle-number">1</div>
+                            <span class="rectangle-label">C</span>
+                            <div class="line-indicator"></div>
+                            <span class="rectangle-label">T</span>
+                        </div>
+                        <div class="fixed-rectangle rect-2">
+                            <div class="rectangle-number">2</div>
+                            <span class="rectangle-label">C</span>
+                            <div class="line-indicator"></div>
+                            <span class="rectangle-label">T</span>
+                        </div>
+                        <div class="fixed-rectangle rect-3">
+                            <div class="rectangle-number">3</div>
+                            <span class="rectangle-label">C</span>
+                            <div class="line-indicator"></div>
+                            <span class="rectangle-label">T</span>
+                        </div>
+                        <div class="fixed-rectangle rect-4">
+                            <div class="rectangle-number">4</div>
+                            <span class="rectangle-label">C</span>
+                            <div class="line-indicator"></div>
+                            <span class="rectangle-label">T</span>
+                        </div>
+                        <div class="fixed-rectangle rect-5">
+                            <div class="rectangle-number">5</div>
+                            <span class="rectangle-label">C</span>
+                            <div class="line-indicator"></div>
+                            <span class="rectangle-label">T</span>
+                        </div>
+                        <div class="fixed-rectangle rect-6">
+                            <div class="rectangle-number">6</div>
+                            <span class="rectangle-label">C</span>
+                            <div class="line-indicator"></div>
+                            <span class="rectangle-label">T</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="startCamera" class="btn">KAMERAYI AÇ</button>
+                    <button id="bottomButton" class="btn">FOTOĞRAF ÇEK</button>
+                </div>
+                
+                <div class="test-info">
+                    <div class="positive">
+                        <strong>POZİTİF:</strong> Sadece üstte (C) çizgi var, altta (T) yok
+                    </div>
+                    <div class="negative">
+                        <strong>NEGATİF:</strong> Hem üstte (C) hem altta (T) çizgi var
+                    </div>
+                    <div class="invalid">
+                        <strong>GEÇERSİZ:</strong> Sadece altta (T) çizgi var veya hiç çizgi yok
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <h2 class="section-title">Analiz Sonuçları</h2>
+                <div class="error-message" id="errorMessage"></div>
+                <div class="success-message" id="successMessage"></div>
+                <div id="resultsContainer">
+                    <p class="instructions">Sonuçları görmek için lütfen test kitinin fotoğrafını çekin. Analiz sonuçları burada görünecektir.</p>
+                    <div class="result-grid" id="resultGrid">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3>📋 Nasıl Kullanılır?</h3>
+                    <ol>
+                        <li>"Kamerayı Aç" butonuna basarak kameranızı etkinleştirin</li>
+                        <li>Test kitini ekrandaki sarı çerçeveli kutucuklara hizalayın</li>
+                        <li>Her kutucuğun test kitindeki bir bölgeye denk gelmesini sağlayın</li>
+                        <li>"Fotoğraf Çek" butonu ile görüntüyü yakalayın</li>
+                        <li>Analiz sonuçlarını sağ tarafta görüntüleyin</li>
+                    </ol>
+                    
+                
+                </div>
+            </div>
+        </div>
+        
+        <div id="photoModal">
+            <span id="closeModal">×</span>
+            <div class="modal-content">
+                <img id="capturedPhoto" src="" alt="Çekilen Fotoğraf">
+                <button id="uploadButton" class="btn">ANALİZ ET</button>
+                <div class="loading" id="loadingMessage">
+                    <div class="spinner"></div>
+                    <p>Test kiti analiz ediliyor...</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Renk tespiti ve çizgi analizi yapılıyor...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Test Kit Analiz Uygulaması | Gelişmiş Renk Tespiti Teknolojisi</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const startButton = document.getElementById('startCamera');
+            const video = document.getElementById('video');
+            const overlay = document.getElementById('overlay');
+            const rectanglesContainer = document.getElementById('rectanglesContainer');
+            const bottomButton = document.getElementById('bottomButton');
+            const photoModal = document.getElementById('photoModal');
+            const closeModal = document.getElementById('closeModal');
+            const capturedPhoto = document.getElementById('capturedPhoto');
+            const uploadButton = document.getElementById('uploadButton');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const resultGrid = document.getElementById('resultGrid');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+
+            let currentPhotoBlob = null;
+            let stream = null;
+
+            // Initialize the results grid
+            function initializeResults() {
+                resultGrid.innerHTML = '';
+                for (let i = 1; i <= 6; i++) {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <div class="result-number">${i}</div>
+                        <div class="result-value">Bekleniyor...</div>
+                    `;
+                    resultGrid.appendChild(resultItem);
+                }
+            }
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            function showSuccess(message) {
+                successMessage.textContent = message;
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }
+
+            initializeResults();
+
+            startButton.addEventListener('click', async () => {
+                try {
+                    // Yüksek çözünürlük için kamera ayarları
+                    stream = await navigator.mediaDevices.getUserMedia({
+                        video: { 
+                            facingMode: "environment",
+                            width: { ideal: 1920, min: 1280 },
+                            height: { ideal: 1080, min: 720 }
+                        }
+                    });
+                    
+                    video.srcObject = stream;
+                    video.style.display = 'block';
+                    overlay.style.display = 'block';
+                    rectanglesContainer.style.display = 'block';
+                    startButton.style.display = 'none';
+                    bottomButton.style.display = 'block';
+                    
+                    // Video oynamaya başladığında overlay'i göster
+                    video.addEventListener('loadedmetadata', () => {
+                        console.log(`Video boyutları: ${video.videoWidth}x${video.videoHeight}`);
+                    });
+                    
+                    video.play().catch(err => console.error("Video play error:", err));
+                } catch (err) {
+                    showError("Kamera açılamadı: " + err.message);
+                    console.error("Camera error:", err);
+                }
+            });
+
+            bottomButton.addEventListener('click', () => {
+                if (!stream) return;
+                
+                const videoWidth = video.videoWidth;
+                const videoHeight = video.videoHeight;
+                
+                console.log(`Yakalanan video boyutları: ${videoWidth}x${videoHeight}`);
+                
+                // Canvas oluştur - tam çözünürlükte
+                const canvas = document.createElement('canvas');
+                canvas.width = 1920; // Sabit 1920x1080 boyut
+                canvas.height = 1080;
+                const ctx = canvas.getContext('2d');
+                
+                // Video'yu 1920x1080'e ölçekleyerek çiz
+                ctx.drawImage(video, 0, 0, 1920, 1080);
+                
+                // Koordinat bilgilerini debug için konsola yazdır
+                console.log('Sabit koordinatlar kullanılıyor:');
+                console.log('1. Kutucuk: (100, 200, 200, 600)');
+                console.log('2. Kutucuk: (400, 200, 200, 600)');
+                console.log('3. Kutucuk: (700, 200, 200, 600)');
+                console.log('4. Kutucuk: (1000, 200, 200, 600)');
+                console.log('5. Kutucuk: (1300, 200, 200, 600)');
+                console.log('6. Kutucuk: (1600, 200, 200, 600)');
+                
+                // Görüntüyü modal'da göster
+                capturedPhoto.src = canvas.toDataURL('image/jpeg', 0.9);
+                
+                // Blob olarak kaydet (upload için)
+                canvas.toBlob((blob) => {
+                    currentPhotoBlob = blob;
+                    console.log(`Blob boyutu: ${blob.size} bytes`);
+                }, 'image/jpeg', 0.9);
+                
+                photoModal.style.display = 'block';
+            });
+
+            uploadButton.addEventListener('click', async () => {
+                if (!currentPhotoBlob) {
+                    showError('Gönderilecek fotoğraf bulunamadı!');
+                    return;
+                }
+
+                // Loading durumunu göster
+                uploadButton.disabled = true;
+                loadingMessage.style.display = 'block';
+
+                try {
+                    // FormData oluştur
+                    const formData = new FormData();
+                    formData.append('imageFile', currentPhotoBlob, 'test-kit.jpg');
+
+                    console.log('Analiz için gönderiliyor...');
+
+                    // API'ye gönder
+                    const response = await fetch('/Home/ImageControl', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    console.log('Analiz sonucu:', result);
+
+                    if (result.success) {
+                        // Başarılı sonuçları göster
+                        displayResults(result.results);
+                        showSuccess('Test kiti başarıyla analiz edildi! Renk tespiti tamamlandı.');
+                    } else {
+                        showError('Analiz hatası: ' + result.error);
+                    }
+                } catch (error) {
+                    console.error('Upload error:', error);
+                    showError('Bağlantı hatası: ' + error.message);
+                } finally {
+                    // Loading durumunu kapat
+                    uploadButton.disabled = false;
+                    loadingMessage.style.display = 'none';
+                    photoModal.style.display = 'none';
+                }
+            });
+
+            function displayResults(results) {
+                resultGrid.innerHTML = '';
+                
+                results.forEach((result, index) => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    
+                    // Sonuç metnini ve durumunu çıkar
+                    const resultText = result.replace(`${index + 1}. `, '');
+                    let statusClass = '';
+                    
+                    if (resultText.includes('Pozitif')) {
+                        statusClass = 'positive';
+                    } else if (resultText.includes('Negatif')) {
+                        statusClass = 'negative';
+                    } else {
+                        statusClass = 'invalid';
+                    }
+                    
+                    resultItem.innerHTML = `
+                        <div class="result-number">${index + 1}</div>
+                        <div class="result-value ${statusClass}">${resultText}</div>
+                    `;
+                    
+                    resultGrid.appendChild(resultItem);
+                });
+
+                // Sonuçları konsola da yazdır
+                console.log('Analiz Sonuçları:', results);
+            }
+
+            closeModal.addEventListener('click', () => {
+                photoModal.style.display = 'none';
+            });
+
+            // Modal dışına tıklayınca kapat
+            photoModal.addEventListener('click', (e) => {
+                if (e.target === photoModal) {
+                    photoModal.style.display = 'none';
+                }
+            });
+
+            // Sayfa kapatılırken kamerayı durdur
+            window.addEventListener('beforeunload', () => {
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+            });
+        });
+    </script>
+</body>
+</html>

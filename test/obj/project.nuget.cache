@@ -1,15 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "k/wMGirOQ9OyjLTKG8xbz06SZmjuK2z/ZdElCs6OUBIDesjtXlOmFH0ErJt8l2FGoPv/LC2QJOjhhMQcjjflgQ==",
+  "dgSpecHash": "Q23mva4sSOCNZZwGvpg6YeGt1q8oK3swzvYaM2Q1ogJjbAhG+lCzs7MNSuTI7S9tLXQCt1T6o3dg+m/qMsoh4A==",
   "success": false,
   "projectFilePath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.cv\\4.10.0.5680\\emgu.cv.4.10.0.5680.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.cv.bitmap\\4.10.0.5680\\emgu.cv.bitmap.4.10.0.5680.nupkg.sha512",
-    "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.cv.runtime.windows\\4.10.0.5680\\emgu.cv.runtime.windows.4.10.0.5680.nupkg.sha512",
-    "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.arm64\\19.42.34435\\emgu.runtime.windows.msvc.rt.arm64.19.42.34435.nupkg.sha512",
-    "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x64\\19.42.34435\\emgu.runtime.windows.msvc.rt.x64.19.42.34435.nupkg.sha512",
-    "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.42.34435\\emgu.runtime.windows.msvc.rt.x86.19.42.34435.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.6\\microsoft.win32.systemevents.9.0.6.nupkg.sha512",
@@ -36,10 +32,10 @@
   ],
   "logs": [
     {
-      "code": "NU1101",
+      "code": "NU1102",
       "level": "Error",
-      "message": "Unable to find package Emgu.CV.runtime.linux-x64. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
-      "libraryId": "Emgu.CV.runtime.linux-x64",
+      "message": "Unable to find package Emgu.CV.runtime.ubuntu.20.04-x64 with version (>= 4.10.0.5680)\r\n  - Found 5 version(s) in nuget.org [ Nearest version: 4.5.5.4823 ]\r\n  - Found 0 version(s) in Microsoft Visual Studio Offline Packages",
+      "libraryId": "Emgu.CV.runtime.ubuntu.20.04-x64",
       "targetGraphs": [
         "net8.0"
       ]

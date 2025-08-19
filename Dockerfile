@@ -1,13 +1,15 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY *.csproj ./
-RUN dotnet restore
+
+# Tüm dosyaları kopyala ve tek seferde build et
 COPY . .
-RUN dotnet publish -c Release -o /app --no-restore
+RUN dotnet clean
+RUN dotnet restore --force
+RUN dotnet publish -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
-# Minimal dependencies (sadece gerekli olanlar)
+# Sistem paketlerini tek RUN komutunda yükle
 RUN apt-get update && apt-get install -y \
     libgdiplus \
     libc6-dev \
@@ -18,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY --from=build /app .
 
-# Headless mode için environment variables
+# Environment variables for EmguCV
 ENV OPENCV_LOG_LEVEL=ERROR
 ENV OPENCV_OPENCL_DEVICE=disabled
 ENV OPENCV_DISABLE_EIGEN_TENSOR_SUPPORT=1

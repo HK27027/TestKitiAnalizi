@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "kiJE0Cl8c2hibzvtKjxmK2o5yhfU13SoFmTkG9S5joq98rzFb3x8zwlZvEpx+opfrAx3CxctJfQCWiopo7WFbg==",
-  "success": true,
+  "dgSpecHash": "k/wMGirOQ9OyjLTKG8xbz06SZmjuK2z/ZdElCs6OUBIDesjtXlOmFH0ErJt8l2FGoPv/LC2QJOjhhMQcjjflgQ==",
+  "success": false,
   "projectFilePath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.cv\\4.10.0.5680\\emgu.cv.4.10.0.5680.nupkg.sha512",
@@ -34,5 +34,15 @@
     "C:\\Users\\Hüseyin\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Emgu.CV.runtime.linux-x64. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "Emgu.CV.runtime.linux-x64",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

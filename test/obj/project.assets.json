@@ -1894,6 +1894,7 @@
     "net8.0": [
       "Emgu.CV >= 4.10.0.5680",
       "Emgu.CV.Bitmap >= 4.10.0.5680",
+      "Emgu.CV.runtime.linux-x64 >= 4.10.0.5680",
       "Emgu.CV.runtime.windows >= 4.10.0.5680",
       "System.Drawing.Common >= 9.0.6"
     ]
@@ -1955,6 +1956,10 @@
             "target": "Package",
             "version": "[4.10.0.5680, )"
           },
+          "Emgu.CV.runtime.linux-x64": {
+            "target": "Package",
+            "version": "[4.10.0.5680, )"
+          },
           "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.10.0.5680, )"
@@ -1986,5 +1991,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Emgu.CV.runtime.linux-x64. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "Emgu.CV.runtime.linux-x64",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

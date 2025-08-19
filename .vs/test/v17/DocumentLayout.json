@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -19,10 +23,6 @@
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Program.cs",
               "RelativeDocumentMoniker": "test\\Program.cs",
@@ -50,12 +50,11 @@
               "RelativeToolTip": "test\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T12:54:07.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T12:54:07.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\appsettings.json",
               "RelativeDocumentMoniker": "test\\appsettings.json",
@@ -63,33 +62,33 @@
               "RelativeToolTip": "test\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-19T12:54:03.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T12:54:03.407Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Dockerfile",
               "RelativeDocumentMoniker": "test\\Dockerfile",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Dockerfile",
               "RelativeToolTip": "test\\Dockerfile",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-08-19T12:53:46.943Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "test.csproj",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeDocumentMoniker": "test\\test.csproj",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeToolTip": "test\\test.csproj",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-16T18:24:57.114Z"
+              "WhenOpened": "2025-06-16T18:24:57.114Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,12 +100,11 @@
               "RelativeToolTip": "test\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAIQAAAAAAAAAAAAqwKQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:18:50.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T12:18:50.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "test\\Views\\Home\\Index.cshtml",
@@ -114,8 +112,7 @@
               "RelativeToolTip": "test\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAP4BAAAAAAAAAAAUwP0CAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T23:09:41.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T23:09:41.614Z"
             }
           ]
         }

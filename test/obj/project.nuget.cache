@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sUVnLcS9LjZsi5B9kIWleGQXjh3E2OPIXgu4sO/oUilL22W6BB183H4jDvwbgFYdcsR3ol6yp7gCZI7SFrRVUw==",
+  "dgSpecHash": "kiJE0Cl8c2hibzvtKjxmK2o5yhfU13SoFmTkG9S5joq98rzFb3x8zwlZvEpx+opfrAx3CxctJfQCWiopo7WFbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\Test_Kiti\\test\\test.csproj",
+  "projectFilePath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.cv\\4.10.0.5680\\emgu.cv.4.10.0.5680.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\emgu.cv.bitmap\\4.10.0.5680\\emgu.cv.bitmap.4.10.0.5680.nupkg.sha512",

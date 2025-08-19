@@ -1905,11 +1905,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hüseyin\\Documents\\GitHub\\Test_Kiti\\test\\test.csproj",
+      "projectUniqueName": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\Test_Kiti\\test\\test.csproj",
+      "projectPath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
       "packagesPath": "C:\\Users\\Hüseyin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\Test_Kiti\\test\\obj\\",
+      "outputPath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

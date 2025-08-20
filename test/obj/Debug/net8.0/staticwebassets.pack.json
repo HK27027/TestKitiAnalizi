@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\7556045c-fd72-4a72-bbe4-aba63ad683ff.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7556045c-fd72-4a72-bbe4-aba63ad683ff.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.test.props",
       "PackagePath": "build\\test.props"
     },

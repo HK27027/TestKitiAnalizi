@@ -59,7 +59,7 @@
             },
             "Emgu.CV.runtime.ubuntu": {
               "target": "Package",
-              "version": "[4.10.0.5680, )"
+              "version": "[4.4.0.4099, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

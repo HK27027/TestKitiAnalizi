@@ -17,30 +17,27 @@
 		<None Remove="Views\NewFolder\**" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<!-- Ana OpenCVSharp paketleri - Güncel ve uyumlu versiyonlar -->
-		<PackageReference Include="OpenCvSharp4" Version="4.9.0.20240103" />
-		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.9.0.20240103" />
-
-		<!-- Windows runtime - sadece Windows'ta -->
-		<PackageReference Include="OpenCvSharp4.runtime.win" Version="4.9.0.20240103"
-						  Condition="$([MSBuild]::IsOsPlatform('Windows'))" />
-
-		<!-- Linux runtime - sadece Linux'ta -->
-		<PackageReference Include="OpenCvSharp4.runtime.ubuntu.20.04-x64" Version="4.9.0.20240103"
-						  Condition="$([MSBuild]::IsOsPlatform('Linux'))" />
-
-		<!-- Alternatif Linux runtime (daha geniş uyumluluk) -->
-		<PackageReference Include="OpenCvSharp4.runtime.ubuntu.18.04-x64" Version="4.9.0.20240103"
-						  Condition="$([MSBuild]::IsOsPlatform('Linux'))" />
-
-		<!-- System.Drawing.Common - Cross-platform -->
+	<!-- Windows için paketler -->
+	<ItemGroup Condition="$([MSBuild]::IsOsPlatform('Windows'))">
+		<PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.8.0.20230708" />
+		<PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
 		<PackageReference Include="System.Drawing.Common" Version="8.0.0" />
 	</ItemGroup>
 
-	<!-- Linux deployment için gerekli bağımlılıklar -->
+	<!-- Linux için paketler -->
 	<ItemGroup Condition="$([MSBuild]::IsOsPlatform('Linux'))">
-		<PackageReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="OpenCvSharp4" Version="4.6.0.20220608" />
+		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.6.0.20220608" />
+		<PackageReference Include="OpenCvSharp4.runtime.ubuntu.20.04-x64" Version="4.6.0.20220608" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+	</ItemGroup>
+
+	<!-- Development ortamı için (Visual Studio'da IntelliSense çalışması için) -->
+	<ItemGroup Condition="'$(MSBuildRuntimeType)' == 'Full'">
+		<PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.8.0.20230708" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.0" />
 	</ItemGroup>
 
 </Project>

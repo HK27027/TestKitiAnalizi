@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,13 +42,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "test.csproj",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeDocumentMoniker": "test\\test.csproj",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeToolTip": "test\\test.csproj",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAC0AAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-20T13:33:15.517Z",
               "EditorCaption": ""
@@ -91,13 +91,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "test\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Controllers\\HomeController.cs",
               "RelativeToolTip": "test\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAA8wCcAAAAQAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAmwCcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T12:18:50.282Z",
               "EditorCaption": ""
@@ -112,8 +112,7 @@
               "RelativeToolTip": "test\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAANwCAAAAAAAAAAAwwP0CAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T23:09:41.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-18T23:09:41.614Z"
             }
           ]
         }

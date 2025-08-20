@@ -11,16 +11,16 @@
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|solutionrelative:test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A90663C7-D0E7-41C1-A981-DA3FE9385DCF}|test\\test.csproj|c:\\users\\h\u00FCseyin\\documents\\github\\testkitianalizi\\test\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -43,19 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "test",
+              "Title": "test.csproj",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeDocumentMoniker": "test\\test.csproj",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeToolTip": "test\\test.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-20T13:33:15.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Program.cs",
               "RelativeDocumentMoniker": "test\\Program.cs",
@@ -68,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\appsettings.json",
               "RelativeDocumentMoniker": "test\\appsettings.json",
@@ -81,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Dockerfile",
               "RelativeDocumentMoniker": "test\\Dockerfile",
@@ -100,7 +100,7 @@
               "RelativeDocumentMoniker": "test\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\Controllers\\HomeController.cs",
               "RelativeToolTip": "test\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAYwG0AAAAVAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAA8wCcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T12:18:50.282Z",
               "EditorCaption": ""

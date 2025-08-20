@@ -9,10 +9,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using test.Models;
-using Emgu.CV;
-using Emgu.CV.Structure;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Util;
+using OpenCvSharp;
+using Point = OpenCvSharp.Point;
+using Rect = OpenCvSharp.Rect;
+using Size = OpenCvSharp.Size;
 
 namespace test.Controllers
 {
@@ -75,9 +75,9 @@ namespace test.Controllers
         {
             var results = new List<string>();
 
-            using (Mat image = CvInvoke.Imread(imagePath, ImreadModes.Color))
+            using (Mat image = Cv2.ImRead(imagePath, ImreadModes.Color))
             {
-                if (image.IsEmpty)
+                if (image.Empty())
                 {
                     throw new Exception("Görüntü yüklenemedi");
                 }
@@ -89,7 +89,7 @@ namespace test.Controllers
 
                 // Görüntüyü 1920x1080'e yeniden boyutlandýr (eðer farklýysa)
                 Mat resizedImage = new Mat();
-                CvInvoke.Resize(image, resizedImage, new Size(1920, 1080));
+                Cv2.Resize(image, resizedImage, new Size(1920, 1080));
 
                 // Sabit koordinatlarý kullan
                 var testBoxes = GetFixedTestBoxCoordinates();
@@ -99,12 +99,12 @@ namespace test.Controllers
                 for (int i = 0; i < testBoxes.Count; i++)
                 {
                     var box = testBoxes[i];
-                    CvInvoke.Rectangle(debugImage, box, new MCvScalar(0, 255, 255), 3); // Sarý çerçeve
-                    CvInvoke.PutText(debugImage, (i + 1).ToString(),
-                        new Point(box.X + 20, box.Y + 50),
-                        FontFace.HersheySimplex, 2, new MCvScalar(0, 255, 255), 3);
+                    Cv2.Rectangle(debugImage, box, new Scalar(0, 255, 255), 3); // Sarý çerçeve
+                    Cv2.PutText(debugImage, (i + 1).ToString(),
+                    new Point(box.X + 20, box.Y + 50),
+                        HersheyFonts.HersheySimplex, 2, new Scalar(0, 255, 255), 3);
                 }
-                CvInvoke.Imwrite(Path.Combine(debugPath, "debug_boxes.jpg"), debugImage);
+                Cv2.ImWrite(Path.Combine(debugPath, "debug_boxes.jpg"), debugImage);
 
                 // Her kutucuðu analiz et
                 for (int i = 0; i < testBoxes.Count && i < 6; i++)
@@ -113,27 +113,31 @@ namespace test.Controllers
                     var result = AnalyzeTestBoxWithColor(resizedImage, box, i + 1, debugPath);
                     results.Add(result);
                 }
+
+                // Kaynaklarý temizle
+                resizedImage.Dispose();
+                debugImage.Dispose();
             }
 
             return results;
         }
 
-        private List<Rectangle> GetFixedTestBoxCoordinates()
+        private List<Rect> GetFixedTestBoxCoordinates()
         {
-            var boxes = new List<Rectangle>
+            var boxes = new List<Rect>
             {
-                new Rectangle(100, 200, 200, 600),   // 1. Kutucuk
-                new Rectangle(400, 200, 200, 600),   // 2. Kutucuk
-                new Rectangle(700, 200, 200, 600),   // 3. Kutucuk
-                new Rectangle(1000, 200, 200, 600),  // 4. Kutucuk
-                new Rectangle(1300, 200, 200, 600),  // 5. Kutucuk
-                new Rectangle(1600, 200, 200, 600)   // 6. Kutucuk
+                new Rect(100, 200, 200, 600),   // 1. Kutucuk
+                new Rect(400, 200, 200, 600),   // 2. Kutucuk
+                new Rect(700, 200, 200, 600),   // 3. Kutucuk
+                new Rect(1000, 200, 200, 600),  // 4. Kutucuk
+                new Rect(1300, 200, 200, 600),  // 5. Kutucuk
+                new Rect(1600, 200, 200, 600)   // 6. Kutucuk
             };
 
             return boxes;
         }
 
-        private string AnalyzeTestBoxWithColor(Mat image, Rectangle box, int boxNumber, string debugPath)
+        private string AnalyzeTestBoxWithColor(Mat image, Rect box, int boxNumber, string debugPath)
         {
             try
             {
@@ -141,25 +145,30 @@ namespace test.Controllers
                 Mat roi = new Mat(image, box);
 
                 // Debug için ROI'yi kaydet
-                CvInvoke.Imwrite(Path.Combine(debugPath, $"roi_{boxNumber}.jpg"), roi);
+                Cv2.ImWrite(Path.Combine(debugPath, $"roi_{boxNumber}.jpg"), roi);
 
                 // Kutucuðu üst ve alt yarýya böl
                 int halfHeight = roi.Height / 2;
-                Rectangle topHalf = new Rectangle(0, 0, roi.Width, halfHeight);
-                Rectangle bottomHalf = new Rectangle(0, halfHeight, roi.Width, roi.Height - halfHeight);
+                Rect topHalf = new Rect(0, 0, roi.Width, halfHeight);
+                Rect bottomHalf = new Rect(0, halfHeight, roi.Width, roi.Height - halfHeight);
 
                 Mat topRoi = new Mat(roi, topHalf);
                 Mat bottomRoi = new Mat(roi, bottomHalf);
 
                 // Debug için üst ve alt ROI'leri kaydet
-                CvInvoke.Imwrite(Path.Combine(debugPath, $"top_roi_{boxNumber}.jpg"), topRoi);
-                CvInvoke.Imwrite(Path.Combine(debugPath, $"bottom_roi_{boxNumber}.jpg"), bottomRoi);
+                Cv2.ImWrite(Path.Combine(debugPath, $"top_roi_{boxNumber}.jpg"), topRoi);
+                Cv2.ImWrite(Path.Combine(debugPath, $"bottom_roi_{boxNumber}.jpg"), bottomRoi);
 
                 // Her yarýda kýrmýzý/mor çizgi var mý kontrol et
                 bool hasTopLine = HasColoredLine(topRoi, boxNumber, "top", debugPath);
                 bool hasBottomLine = HasColoredLine(bottomRoi, boxNumber, "bottom", debugPath);
 
                 _logger.LogInformation($"Box {boxNumber}: Top={hasTopLine}, Bottom={hasBottomLine}");
+
+                // Kaynaklarý temizle
+                roi.Dispose();
+                topRoi.Dispose();
+                bottomRoi.Dispose();
 
                 // Kurallara göre sonuç belirle
                 if (hasTopLine && !hasBottomLine)
@@ -188,7 +197,7 @@ namespace test.Controllers
             {
                 // HSV color space'e çevir (daha iyi renk tespiti için)
                 Mat hsvImage = new Mat();
-                CvInvoke.CvtColor(roi, hsvImage, ColorConversion.Bgr2Hsv);
+                Cv2.CvtColor(roi, hsvImage, ColorConversionCodes.BGR2HSV);
 
                 // Kýrmýzý renk aralýklarý (HSV'de kýrmýzý iki aralýkta bulunur)
                 Mat redMask1 = new Mat();
@@ -197,53 +206,48 @@ namespace test.Controllers
                 Mat blackMask = new Mat();
 
                 // Kýrmýzý aralýk 1: 0-10
-                CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(0, 50, 50)),
-                                         new ScalarArray(new MCvScalar(10, 255, 255)), redMask1);
+                Cv2.InRange(hsvImage, new Scalar(0, 50, 50), new Scalar(10, 255, 255), redMask1);
 
                 // Kýrmýzý aralýk 2: 170-180
-                CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(170, 50, 50)),
-                                         new ScalarArray(new MCvScalar(180, 255, 255)), redMask2);
+                Cv2.InRange(hsvImage, new Scalar(170, 50, 50), new Scalar(180, 255, 255), redMask2);
 
                 // Mor aralýðý: 120-160
-                CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(120, 50, 50)),
-                                         new ScalarArray(new MCvScalar(160, 255, 255)), purpleMask);
+                Cv2.InRange(hsvImage, new Scalar(120, 50, 50), new Scalar(160, 255, 255), purpleMask);
 
                 // Siyah aralýðý: Düþük V (Value) deðeri olan tüm renkler
-                // H ve S deðeri önemli deðil, sadece V deðeri düþük olan (karanlýk) renkler
-                CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(0, 0, 0)),
-                                         new ScalarArray(new MCvScalar(180, 255, 80)), blackMask);
+                Cv2.InRange(hsvImage, new Scalar(0, 0, 0), new Scalar(180, 255, 80), blackMask);
 
                 // Tüm maskeleri birleþtir
                 Mat combinedMask = new Mat();
-                CvInvoke.BitwiseOr(redMask1, redMask2, combinedMask);
-                CvInvoke.BitwiseOr(combinedMask, purpleMask, combinedMask);
-                CvInvoke.BitwiseOr(combinedMask, blackMask, combinedMask);
+                Cv2.BitwiseOr(redMask1, redMask2, combinedMask);
+                Cv2.BitwiseOr(combinedMask, purpleMask, combinedMask);
+                Cv2.BitwiseOr(combinedMask, blackMask, combinedMask);
 
                 // Debug için maskeyi kaydet
-                CvInvoke.Imwrite(Path.Combine(debugPath, $"mask_{boxNumber}_{position}.jpg"), combinedMask);
+                Cv2.ImWrite(Path.Combine(debugPath, $"mask_{boxNumber}_{position}.jpg"), combinedMask);
 
                 // Morfolojik iþlemler (gürültüyü temizle, çizgileri güçlendir)
-                Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(3, 3), new Point(-1, -1));
-                CvInvoke.MorphologyEx(combinedMask, combinedMask, MorphOp.Close, kernel, new Point(-1, -1), 1, BorderType.Default, new MCvScalar());
+                Mat kernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(3, 3));
+                Cv2.MorphologyEx(combinedMask, combinedMask, MorphTypes.Close, kernel);
 
                 // Yatay çizgileri güçlendirmek için özel kernel
-                Mat horizontalKernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(roi.Width / 4, 3), new Point(-1, -1));
+                Mat horizontalKernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(roi.Width / 4, 3));
                 Mat horizontalMask = new Mat();
-                CvInvoke.MorphologyEx(combinedMask, horizontalMask, MorphOp.Open, horizontalKernel, new Point(-1, -1), 1, BorderType.Default, new MCvScalar());
+                Cv2.MorphologyEx(combinedMask, horizontalMask, MorphTypes.Open, horizontalKernel);
 
                 // Debug için horizontal mask'ý kaydet
-                CvInvoke.Imwrite(Path.Combine(debugPath, $"horizontal_mask_{boxNumber}_{position}.jpg"), horizontalMask);
+                Cv2.ImWrite(Path.Combine(debugPath, $"horizontal_mask_{boxNumber}_{position}.jpg"), horizontalMask);
 
                 // Contours bul
-                VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
-                Mat hierarchy = new Mat();
-                CvInvoke.FindContours(horizontalMask, contours, hierarchy, RetrType.External, ChainApproxMethod.ChainApproxSimple);
+                Point[][] contours;
+                HierarchyIndex[] hierarchy;
+                Cv2.FindContours(horizontalMask, out contours, out hierarchy, RetrievalModes.External, ContourApproximationModes.ApproxSimple);
 
                 // Çizgi kriterlerini kontrol et
-                for (int i = 0; i < contours.Size; i++)
+                for (int i = 0; i < contours.Length; i++)
                 {
-                    double area = CvInvoke.ContourArea(contours[i]);
-                    var boundingRect = CvInvoke.BoundingRectangle(contours[i]);
+                    double area = Cv2.ContourArea(contours[i]);
+                    var boundingRect = Cv2.BoundingRect(contours[i]);
 
                     // Minimum alan kontrolü (ROI'nin %2'si)
                     double minArea = roi.Width * roi.Height * 0.02;
@@ -269,16 +273,41 @@ namespace test.Controllers
                     {
                         // Debug: Bulunan çizgiyi iþaretle
                         Mat debugContour = roi.Clone();
-                        CvInvoke.Rectangle(debugContour, boundingRect, new MCvScalar(0, 255, 0), 2);
-                        CvInvoke.Imwrite(Path.Combine(debugPath, $"found_line_{boxNumber}_{position}.jpg"), debugContour);
+                        Cv2.Rectangle(debugContour, boundingRect, new Scalar(0, 255, 0), 2);
+                        Cv2.ImWrite(Path.Combine(debugPath, $"found_line_{boxNumber}_{position}.jpg"), debugContour);
+
+                        // Kaynaklarý temizle
+                        debugContour.Dispose();
+
+                        // Tüm Mat objelerini temizle
+                        hsvImage.Dispose();
+                        redMask1.Dispose();
+                        redMask2.Dispose();
+                        purpleMask.Dispose();
+                        blackMask.Dispose();
+                        combinedMask.Dispose();
+                        kernel.Dispose();
+                        horizontalKernel.Dispose();
+                        horizontalMask.Dispose();
 
                         return true;
                     }
                 }
 
                 // Eðer contour bulunamadýysa, piksel yoðunluðu kontrol et
-                double whitePixelRatio = CvInvoke.CountNonZero(horizontalMask) / (double)(horizontalMask.Width * horizontalMask.Height);
+                double whitePixelRatio = Cv2.CountNonZero(horizontalMask) / (double)(horizontalMask.Width * horizontalMask.Height);
                 _logger.LogInformation($"Box {boxNumber} {position}: White pixel ratio = {whitePixelRatio:F3}");
+
+                // Kaynaklarý temizle
+                hsvImage.Dispose();
+                redMask1.Dispose();
+                redMask2.Dispose();
+                purpleMask.Dispose();
+                blackMask.Dispose();
+                combinedMask.Dispose();
+                kernel.Dispose();
+                horizontalKernel.Dispose();
+                horizontalMask.Dispose();
 
                 // Eðer yeterince beyaz piksel varsa çizgi var kabul et
                 return whitePixelRatio > 0.05; // %5'ten fazla beyaz piksel

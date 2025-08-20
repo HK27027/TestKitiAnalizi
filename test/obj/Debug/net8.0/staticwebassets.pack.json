@@ -417,8 +417,16 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\2d1c50e5-b38b-4e13-b50a-2b9bee93dcf9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2d1c50e5-b38b-4e13-b50a-2b9bee93dcf9.jpg"
+    },
+    {
       "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\472a2e28-4e62-418b-b0e2-905d8666f068.jpg",
       "PackagePath": "staticwebassets\\uploads\\472a2e28-4e62-418b-b0e2-905d8666f068.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\9fd90923-4225-4a01-be93-1a5a46f1e851.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9fd90923-4225-4a01-be93-1a5a46f1e851.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.test.props",

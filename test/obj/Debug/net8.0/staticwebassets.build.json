@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jMCUvJuus/3nciH5+WpHAWHw8+7DcJ2K0e5nXciTPyY=",
+  "Hash": "zSKG12FLPKR0061Vdsi8jVBT2QiqpdiR2NKdy+mhGzI=",
   "Source": "test",
   "BasePath": "_content/test",
   "Mode": "Default",
@@ -2012,6 +2012,25 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\2d1c50e5-b38b-4e13-b50a-2b9bee93dcf9.jpg",
+      "SourceId": "test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\",
+      "BasePath": "_content/test",
+      "RelativePath": "uploads/2d1c50e5-b38b-4e13-b50a-2b9bee93dcf9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\2d1c50e5-b38b-4e13-b50a-2b9bee93dcf9.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\472a2e28-4e62-418b-b0e2-905d8666f068.jpg",
       "SourceId": "test",
       "SourceType": "Discovered",
@@ -2029,6 +2048,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\472a2e28-4e62-418b-b0e2-905d8666f068.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\9fd90923-4225-4a01-be93-1a5a46f1e851.jpg",
+      "SourceId": "test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\",
+      "BasePath": "_content/test",
+      "RelativePath": "uploads/9fd90923-4225-4a01-be93-1a5a46f1e851.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\9fd90923-4225-4a01-be93-1a5a46f1e851.jpg"
     }
   ]
 }

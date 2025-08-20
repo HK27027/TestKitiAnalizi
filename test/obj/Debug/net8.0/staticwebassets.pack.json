@@ -429,6 +429,10 @@
       "PackagePath": "staticwebassets\\uploads\\9fd90923-4225-4a01-be93-1a5a46f1e851.jpg"
     },
     {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\b447afc1-aef4-4c6e-83b7-04e7742f9b07.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b447afc1-aef4-4c6e-83b7-04e7742f9b07.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.test.props",
       "PackagePath": "build\\test.props"
     },

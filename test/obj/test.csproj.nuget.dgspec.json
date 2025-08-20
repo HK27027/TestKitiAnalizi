@@ -51,19 +51,19 @@
           "dependencies": {
             "OpenCvSharp4": {
               "target": "Package",
-              "version": "[4.8.0.20230708, )"
+              "version": "[4.9.0.20240103, )"
             },
             "OpenCvSharp4.Extensions": {
               "target": "Package",
-              "version": "[4.8.0.20230708, )"
+              "version": "[4.9.0.20240103, )"
             },
-            "OpenCvSharp4.runtime.ubuntu.18.04-x64": {
+            "OpenCvSharp4.runtime.win": {
               "target": "Package",
-              "version": "[4.6.0.20220608, )"
+              "version": "[4.9.0.20240103, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -77,6 +77,32 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[8.0.4, 8.0.4]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.4, 8.0.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.4, 8.0.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[8.0.4, 8.0.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.4, 8.0.4]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.4, 8.0.4]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -86,6 +112,14 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
         }
       }
     }

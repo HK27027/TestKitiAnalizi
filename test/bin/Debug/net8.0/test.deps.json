@@ -8,32 +8,32 @@
     ".NETCoreApp,Version=v8.0": {
       "test/1.0.0": {
         "dependencies": {
-          "OpenCvSharp4": "4.8.0.20230708",
-          "OpenCvSharp4.Extensions": "4.8.0.20230708",
-          "OpenCvSharp4.runtime.ubuntu.18.04-x64": "4.6.0.20220608",
-          "System.Drawing.Common": "9.0.6"
+          "OpenCvSharp4": "4.9.0.20240103",
+          "OpenCvSharp4.Extensions": "4.9.0.20240103",
+          "OpenCvSharp4.runtime.win": "4.9.0.20240103",
+          "System.Drawing.Common": "8.0.0"
         },
         "runtime": {
           "test.dll": {}
         }
       },
-      "Microsoft.Win32.SystemEvents/9.0.6": {
+      "Microsoft.Win32.SystemEvents/8.0.0": {
         "runtime": {
           "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.625.26613"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.625.26613"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
-      "OpenCvSharp4/4.8.0.20230708": {
+      "OpenCvSharp4/4.9.0.20240103": {
         "dependencies": {
           "System.Memory": "4.5.5",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -45,10 +45,10 @@
           }
         }
       },
-      "OpenCvSharp4.Extensions/4.8.0.20230708": {
+      "OpenCvSharp4.Extensions/4.9.0.20240103": {
         "dependencies": {
-          "OpenCvSharp4": "4.8.0.20230708",
-          "System.Drawing.Common": "9.0.6"
+          "OpenCvSharp4": "4.9.0.20240103",
+          "System.Drawing.Common": "8.0.0"
         },
         "runtime": {
           "lib/net6.0/OpenCvSharp.Extensions.dll": {
@@ -57,27 +57,38 @@
           }
         }
       },
-      "OpenCvSharp4.runtime.ubuntu.18.04-x64/4.6.0.20220608": {
+      "OpenCvSharp4.runtime.win/4.9.0.20240103": {
         "runtimeTargets": {
-          "runtimes/ubuntu.18.04-x64/native/libOpenCvSharpExtern.so": {
-            "rid": "ubuntu.18.04-x64",
+          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x64",
             "assetType": "native",
             "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg490_64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2023.12.0.0"
+          },
+          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg490.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2023.12.0.0"
           }
         }
       },
-      "System.Drawing.Common/9.0.6": {
+      "System.Drawing.Common/8.0.0": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "9.0.6"
+          "Microsoft.Win32.SystemEvents": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.625.26605"
-          },
-          "lib/net8.0/System.Private.Windows.Core.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.625.26605"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53105"
           }
         }
       },
@@ -91,40 +102,40 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Win32.SystemEvents/9.0.6": {
+    "Microsoft.Win32.SystemEvents/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mUa3Chovao0xQ74j2hUN5kDTn3luY/1e9usJYT0r51cgqfQsgQu5C8Cis9h65SNRbkbBwErfXKlBtHCkMiYa/g==",
-      "path": "microsoft.win32.systemevents/9.0.6",
-      "hashPath": "microsoft.win32.systemevents.9.0.6.nupkg.sha512"
+      "sha512": "sha512-9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
+      "path": "microsoft.win32.systemevents/8.0.0",
+      "hashPath": "microsoft.win32.systemevents.8.0.0.nupkg.sha512"
     },
-    "OpenCvSharp4/4.8.0.20230708": {
+    "OpenCvSharp4/4.9.0.20240103": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MmZqvNUJuTUWQfkyXN1NOxJjx6JNfaedMOnY0dAdP5zgaKMAsxwwX5pkZl/F40JheSo3oMJhI7nhDC3kh7/ISQ==",
-      "path": "opencvsharp4/4.8.0.20230708",
-      "hashPath": "opencvsharp4.4.8.0.20230708.nupkg.sha512"
+      "sha512": "sha512-+BJMqToSH3dl+5SUF2YaPI+1eY/o/aTtvCQsY3qgcE4YS8qvPNS7MObzzVy4avYrBmcEEFnCvNF+1VbFnQjU9w==",
+      "path": "opencvsharp4/4.9.0.20240103",
+      "hashPath": "opencvsharp4.4.9.0.20240103.nupkg.sha512"
     },
-    "OpenCvSharp4.Extensions/4.8.0.20230708": {
+    "OpenCvSharp4.Extensions/4.9.0.20240103": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nMX2ZFI+cAIp7q2UoaHFSzBD9xJgr/TyZ9dDOuDS0K2BNCdOYqT8TbXWIGCIXpcLZLn2seoy5r4ZlGaJsyREYg==",
-      "path": "opencvsharp4.extensions/4.8.0.20230708",
-      "hashPath": "opencvsharp4.extensions.4.8.0.20230708.nupkg.sha512"
+      "sha512": "sha512-zqFJuQPV36ttTMrN1kMGQdj8rDD+wMDtTU5fVGE8osSPEAyehru1ow3xTAmB04uiaKlbzl/gy2G9BnbT+OgMNA==",
+      "path": "opencvsharp4.extensions/4.9.0.20240103",
+      "hashPath": "opencvsharp4.extensions.4.9.0.20240103.nupkg.sha512"
     },
-    "OpenCvSharp4.runtime.ubuntu.18.04-x64/4.6.0.20220608": {
+    "OpenCvSharp4.runtime.win/4.9.0.20240103": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-peg3eKPtRRy/j1xAx/stvNrKSpi3E384gJyIWu8s1fNUO98ayJUqCN7OO39EUzD5dMccjdgoviI1QkHYiCLNUQ==",
-      "path": "opencvsharp4.runtime.ubuntu.18.04-x64/4.6.0.20220608",
-      "hashPath": "opencvsharp4.runtime.ubuntu.18.04-x64.4.6.0.20220608.nupkg.sha512"
+      "sha512": "sha512-PkV3ge6rE//gj0OlG4TRXzmcLVDoKsJx0lYN1ogx9gZhqUPHlzrnWqKk2hAFK+nU8T0chRhrwHL0U2hSMyoCWw==",
+      "path": "opencvsharp4.runtime.win/4.9.0.20240103",
+      "hashPath": "opencvsharp4.runtime.win.4.9.0.20240103.nupkg.sha512"
     },
-    "System.Drawing.Common/9.0.6": {
+    "System.Drawing.Common/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KpPB6e7PYCalslhmq/dVa2tJgCcfUDhEK83j1Eix+BmEcNPP00JJBvFrBT7jGcHLmQzsIA4AthwNFkk+cD3RKA==",
-      "path": "system.drawing.common/9.0.6",
-      "hashPath": "system.drawing.common.9.0.6.nupkg.sha512"
+      "sha512": "sha512-JkbHJjtI/dWc5dfmEdJlbe3VwgZqCkZRtfuWFh5GOv0f+gGCfBtzMpIVkmdkj2AObO9y+oiOi81UGwH3aBYuqA==",
+      "path": "system.drawing.common/8.0.0",
+      "hashPath": "system.drawing.common.8.0.0.nupkg.sha512"
     },
     "System.Memory/4.5.5": {
       "type": "package",

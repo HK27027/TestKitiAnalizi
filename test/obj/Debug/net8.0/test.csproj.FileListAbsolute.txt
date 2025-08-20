@@ -145,7 +145,6 @@ C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\test.dl
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\test.pdb
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\System.Private.Windows.Core.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\obj\Debug\net8.0\test.csproj.AssemblyReference.cache
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\obj\Debug\net8.0\test.GeneratedMSBuildEditorConfig.editorconfig
@@ -174,4 +173,7 @@ C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\obj\Debug\net8.0\test.ge
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\obj\Debug\net8.0\ref\test.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\OpenCvSharp.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\OpenCvSharp.Extensions.dll
-C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\ubuntu.18.04-x64\native\libOpenCvSharpExtern.so
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x64\native\opencv_videoio_ffmpeg490_64.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x86\native\OpenCvSharpExtern.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x86\native\opencv_videoio_ffmpeg490.dll

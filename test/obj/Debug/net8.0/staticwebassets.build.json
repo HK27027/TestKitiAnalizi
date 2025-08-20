@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zSKG12FLPKR0061Vdsi8jVBT2QiqpdiR2NKdy+mhGzI=",
+  "Hash": "ce8KPig8BPbxNqAjsmn4hmyYd9jlz2vj5QOUwjLcI3g=",
   "Source": "test",
   "BasePath": "_content/test",
   "Mode": "Default",
@@ -2067,6 +2067,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\9fd90923-4225-4a01-be93-1a5a46f1e851.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\b447afc1-aef4-4c6e-83b7-04e7742f9b07.jpg",
+      "SourceId": "test",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\",
+      "BasePath": "_content/test",
+      "RelativePath": "uploads/b447afc1-aef4-4c6e-83b7-04e7742f9b07.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\b447afc1-aef4-4c6e-83b7-04e7742f9b07.jpg"
     }
   ]
 }

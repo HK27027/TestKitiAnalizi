@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rNjvjkEGgeWMvdvKsumE83b6vXD/5rm1JGSqIiUYHag=",
+  "Hash": "wDhEpTDEnMi3B+yIS2dHamzLIs9v5wy93gBGhHnPZPU=",
   "Source": "test",
   "BasePath": "_content/test",
   "Mode": "Default",
@@ -1193,25 +1193,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\uploads\\7556045c-fd72-4a72-bbe4-aba63ad683ff.jpg",
-      "SourceId": "test",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\",
-      "BasePath": "_content/test",
-      "RelativePath": "uploads/7556045c-fd72-4a72-bbe4-aba63ad683ff.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\7556045c-fd72-4a72-bbe4-aba63ad683ff.jpg"
     }
   ]
 }

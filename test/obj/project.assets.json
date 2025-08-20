@@ -38,15 +38,6 @@
           }
         }
       },
-      "Emgu.CV.runtime.ubuntu/4.4.0.4099": {
-        "type": "package",
-        "dependencies": {
-          "Emgu.CV": "[4.4.0.4099]"
-        },
-        "build": {
-          "build/Emgu.CV.runtime.ubuntu.targets": {}
-        }
-      },
       "Microsoft.NETCore.Platforms/1.1.1": {
         "type": "package",
         "compile": {
@@ -439,21 +430,6 @@
         "lib/netstandard2.0/Emgu.CV.Bitmap.dll",
         "lib/netstandard2.0/Emgu.CV.Bitmap.xml",
         "nuget_icon.png"
-      ]
-    },
-    "Emgu.CV.runtime.ubuntu/4.4.0.4099": {
-      "sha512": "a6Ox6+gfv/3aGDizj/Eyk6X0ZaTxzvUtM2BIU47qbGQDovzSJ7Dq3dRrBifvOJRVWjRKHBnCpXo3Rv8AybwL+A==",
-      "type": "package",
-      "path": "emgu.cv.runtime.ubuntu/4.4.0.4099",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "build/Emgu.CV.runtime.ubuntu.targets",
-        "build/x64/libcvextern.so",
-        "emgu.cv.runtime.ubuntu.4.4.0.4099.nupkg.sha512",
-        "emgu.cv.runtime.ubuntu.nuspec",
-        "icon.png"
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.1": {
@@ -1686,7 +1662,7 @@
     "net8.0": [
       "Emgu.CV >= 4.10.0.5680",
       "Emgu.CV.Bitmap >= 4.10.0.5680",
-      "Emgu.CV.runtime.ubuntu >= 4.4.0.4099",
+      "Emgu.CV.runtime.ubuntu >= 4.10.0.5680",
       "System.Drawing.Common >= 9.0.6"
     ]
   },
@@ -1749,7 +1725,7 @@
           },
           "Emgu.CV.runtime.ubuntu": {
             "target": "Package",
-            "version": "[4.4.0.4099, )"
+            "version": "[4.10.0.5680, )"
           },
           "System.Drawing.Common": {
             "target": "Package",
@@ -1781,11 +1757,10 @@
   },
   "logs": [
     {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Emgu.CV.runtime.ubuntu 4.4.0.4099 requires Emgu.CV (= 4.4.0.4099) but version Emgu.CV 4.10.0.5680 was resolved.",
-      "libraryId": "Emgu.CV",
+      "code": "NU1102",
+      "level": "Error",
+      "message": "Unable to find package Emgu.CV.runtime.ubuntu with version (>= 4.10.0.5680)\r\n  - Found 3 version(s) in nuget.org [ Nearest version: 4.4.0.4099 ]\r\n  - Found 0 version(s) in Microsoft Visual Studio Offline Packages",
+      "libraryId": "Emgu.CV.runtime.ubuntu",
       "targetGraphs": [
         "net8.0"
       ]

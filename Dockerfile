@@ -1,10 +1,13 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Tüm dosyaları kopyala ve build et
+# Sadece csproj dosyalarını kopyala ve restore et (cache için)
+COPY *.sln .
+COPY test/*.csproj ./test/
+RUN dotnet restore
+
+# Tüm kaynak kodlarını kopyala ve publish et
 COPY . .
-RUN dotnet clean
-RUN dotnet restore --force
 RUN dotnet publish -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
@@ -31,5 +34,5 @@ ENV OPENCV_DISABLE_EIGEN_TENSOR_SUPPORT=1
 
 EXPOSE 80
 
-# Burada kendi projenin DLL adını yaz (örnek: MyApp.dll)
-ENTRYPOINT ["dotnet", "MyApp.dll"]
+# Çıkan dll adını buraya yaz (örnek: test.dll değil projenin gerçek adı)
+ENTRYPOINT ["dotnet", "test.dll"]

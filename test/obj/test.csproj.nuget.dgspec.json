@@ -57,7 +57,7 @@
               "target": "Package",
               "version": "[4.10.0.5680, )"
             },
-            "Emgu.CV.runtime.ubuntu.20.04-x64": {
+            "Emgu.CV.runtime.windows": {
               "target": "Package",
               "version": "[4.10.0.5680, )"
             },

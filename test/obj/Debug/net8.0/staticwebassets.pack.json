@@ -9,6 +9,178 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\bottom_roi_1.jpg",
+      "PackagePath": "staticwebassets\\debug\\bottom_roi_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\bottom_roi_2.jpg",
+      "PackagePath": "staticwebassets\\debug\\bottom_roi_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\bottom_roi_3.jpg",
+      "PackagePath": "staticwebassets\\debug\\bottom_roi_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\bottom_roi_4.jpg",
+      "PackagePath": "staticwebassets\\debug\\bottom_roi_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\bottom_roi_5.jpg",
+      "PackagePath": "staticwebassets\\debug\\bottom_roi_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\bottom_roi_6.jpg",
+      "PackagePath": "staticwebassets\\debug\\bottom_roi_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\debug_boxes.jpg",
+      "PackagePath": "staticwebassets\\debug\\debug_boxes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_1_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_1_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_1_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_1_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_2_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_2_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_2_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_2_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_3_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_3_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_3_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_3_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_4_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_4_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_4_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_4_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_5_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_5_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_5_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_5_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_6_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_6_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\horizontal_mask_6_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\horizontal_mask_6_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_1_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_1_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_1_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_1_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_2_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_2_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_2_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_2_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_3_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_3_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_3_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_3_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_4_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_4_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_4_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_4_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_5_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_5_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_5_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_5_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_6_bottom.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_6_bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\mask_6_top.jpg",
+      "PackagePath": "staticwebassets\\debug\\mask_6_top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\roi_1.jpg",
+      "PackagePath": "staticwebassets\\debug\\roi_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\roi_2.jpg",
+      "PackagePath": "staticwebassets\\debug\\roi_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\roi_3.jpg",
+      "PackagePath": "staticwebassets\\debug\\roi_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\roi_4.jpg",
+      "PackagePath": "staticwebassets\\debug\\roi_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\roi_5.jpg",
+      "PackagePath": "staticwebassets\\debug\\roi_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\roi_6.jpg",
+      "PackagePath": "staticwebassets\\debug\\roi_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\top_roi_1.jpg",
+      "PackagePath": "staticwebassets\\debug\\top_roi_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\top_roi_2.jpg",
+      "PackagePath": "staticwebassets\\debug\\top_roi_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\top_roi_3.jpg",
+      "PackagePath": "staticwebassets\\debug\\top_roi_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\top_roi_4.jpg",
+      "PackagePath": "staticwebassets\\debug\\top_roi_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\top_roi_5.jpg",
+      "PackagePath": "staticwebassets\\debug\\top_roi_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\debug\\top_roi_6.jpg",
+      "PackagePath": "staticwebassets\\debug\\top_roi_6.jpg"
+    },
+    {
       "Id": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

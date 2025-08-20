@@ -538,6 +538,31 @@
             "related": ".xml"
           }
         }
+      },
+      "VDK.EmguCV.x64/2.4.10.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Emgu.CV.GPU.dll": {},
+          "lib/net40/Emgu.CV.ML.dll": {},
+          "lib/net40/Emgu.CV.OCR.dll": {},
+          "lib/net40/Emgu.CV.OpenCL.dll": {},
+          "lib/net40/Emgu.CV.Stitching.dll": {},
+          "lib/net40/Emgu.CV.UI.dll": {},
+          "lib/net40/Emgu.CV.VideoStab.dll": {},
+          "lib/net40/Emgu.CV.dll": {},
+          "lib/net40/Emgu.Util.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Emgu.CV.GPU.dll": {},
+          "lib/net40/Emgu.CV.ML.dll": {},
+          "lib/net40/Emgu.CV.OCR.dll": {},
+          "lib/net40/Emgu.CV.OpenCL.dll": {},
+          "lib/net40/Emgu.CV.Stitching.dll": {},
+          "lib/net40/Emgu.CV.UI.dll": {},
+          "lib/net40/Emgu.CV.VideoStab.dll": {},
+          "lib/net40/Emgu.CV.dll": {},
+          "lib/net40/Emgu.Util.dll": {}
+        }
       }
     }
   },
@@ -1888,6 +1913,59 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "VDK.EmguCV.x64/2.4.10.1": {
+      "sha512": "vVMB5kQ+K3+yejYwIxbM6JtKUVCnI96o+7FSst5yHEiWa9Z0emdFd1zmbA2G8m/35pwiibSZpTduB8U2RyUGCA==",
+      "type": "package",
+      "path": "vdk.emgucv.x64/2.4.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/tessdata/eng.cube.bigrams",
+        "content/tessdata/eng.cube.fold",
+        "content/tessdata/eng.cube.lm",
+        "content/tessdata/eng.cube.nn",
+        "content/tessdata/eng.cube.params",
+        "content/tessdata/eng.cube.size",
+        "content/tessdata/eng.cube.word-freq",
+        "content/tessdata/eng.tesseract_cube.nn",
+        "content/tessdata/eng.traineddata",
+        "content/x64/OpenCL.dll",
+        "content/x64/cudart64_65.dll",
+        "content/x64/cufft64_65.dll",
+        "content/x64/cvextern.dll",
+        "content/x64/nppc64_65.dll",
+        "content/x64/nppi64_65.dll",
+        "content/x64/npps64_65.dll",
+        "content/x64/opencv_calib3d2410.dll",
+        "content/x64/opencv_contrib2410.dll",
+        "content/x64/opencv_core2410.dll",
+        "content/x64/opencv_features2d2410.dll",
+        "content/x64/opencv_flann2410.dll",
+        "content/x64/opencv_gpu2410.dll",
+        "content/x64/opencv_highgui2410.dll",
+        "content/x64/opencv_imgproc2410.dll",
+        "content/x64/opencv_legacy2410.dll",
+        "content/x64/opencv_ml2410.dll",
+        "content/x64/opencv_nonfree2410.dll",
+        "content/x64/opencv_objdetect2410.dll",
+        "content/x64/opencv_photo2410.dll",
+        "content/x64/opencv_stitching2410.dll",
+        "content/x64/opencv_superres2410.dll",
+        "content/x64/opencv_video2410.dll",
+        "content/x64/opencv_videostab2410.dll",
+        "lib/net40/Emgu.CV.GPU.dll",
+        "lib/net40/Emgu.CV.ML.dll",
+        "lib/net40/Emgu.CV.OCR.dll",
+        "lib/net40/Emgu.CV.OpenCL.dll",
+        "lib/net40/Emgu.CV.Stitching.dll",
+        "lib/net40/Emgu.CV.UI.dll",
+        "lib/net40/Emgu.CV.VideoStab.dll",
+        "lib/net40/Emgu.CV.dll",
+        "lib/net40/Emgu.Util.dll",
+        "vdk.emgucv.x64.2.4.10.1.nupkg.sha512",
+        "vdk.emgucv.x64.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1895,7 +1973,8 @@
       "Emgu.CV >= 4.10.0.5680",
       "Emgu.CV.Bitmap >= 4.10.0.5680",
       "Emgu.CV.runtime.windows >= 4.10.0.5680",
-      "System.Drawing.Common >= 9.0.6"
+      "System.Drawing.Common >= 9.0.6",
+      "VDK.EmguCV.x64 >= 2.4.10.1"
     ]
   },
   "packageFolders": {
@@ -1962,6 +2041,10 @@
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[9.0.6, )"
+          },
+          "VDK.EmguCV.x64": {
+            "target": "Package",
+            "version": "[2.4.10.1, )"
           }
         },
         "imports": [
@@ -1986,5 +2069,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'VDK.EmguCV.x64 2.4.10.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "VDK.EmguCV.x64",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -208,3 +208,11 @@ C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtime
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x86\native\msvcp140_atomic_wait.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
 C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\runtimes\win-x86\native\vcruntime140.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.GPU.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.ML.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.OCR.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.OpenCL.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.Stitching.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.UI.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.CV.VideoStab.dll
+C:\Users\Hüseyin\Documents\GitHub\TestKitiAnalizi\test\bin\Debug\net8.0\Emgu.Util.dll

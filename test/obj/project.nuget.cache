@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "RHCzgoi2x9M3cK0p9FHTRn1YT2lO3//LNkcFfE7ro4EqHEklxYrai78RAtTwmMfNgvpqR8XwR9IxmBESb06d6Q==",
+  "dgSpecHash": "jIDfE4zlFyzi/LBbN8SUuLXsPdbtnMG0o4TQVgZMHyDF8xc5l8iLD4OgEHjAm+7PzH85MXXeqETvNxFmG+0pXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hüseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hüseyin\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.6\\microsoft.win32.systemevents.9.0.6.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\opencvsharp4\\4.8.0.20230708\\opencvsharp4.4.8.0.20230708.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\opencvsharp4.extensions\\4.8.0.20230708\\opencvsharp4.extensions.4.8.0.20230708.nupkg.sha512",
-    "C:\\Users\\Hüseyin\\.nuget\\packages\\opencvsharp4.runtime.win\\4.11.0.20250507\\opencvsharp4.runtime.win.4.11.0.20250507.nupkg.sha512",
-    "C:\\Users\\Hüseyin\\.nuget\\packages\\opencvsharp4_.runtime.ubuntu.20.04-x64\\4.10.0.20240616\\opencvsharp4_.runtime.ubuntu.20.04-x64.4.10.0.20240616.nupkg.sha512",
+    "C:\\Users\\Hüseyin\\.nuget\\packages\\opencvsharp4.runtime.ubuntu.18.04-x64\\4.6.0.20220608\\opencvsharp4.runtime.ubuntu.18.04-x64.4.6.0.20220608.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\system.drawing.common\\9.0.6\\system.drawing.common.9.0.6.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\Hüseyin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

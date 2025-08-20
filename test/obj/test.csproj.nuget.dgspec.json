@@ -57,13 +57,9 @@
               "target": "Package",
               "version": "[4.8.0.20230708, )"
             },
-            "OpenCvSharp4.runtime.win": {
+            "OpenCvSharp4.runtime.ubuntu.18.04-x64": {
               "target": "Package",
-              "version": "[4.11.0.20250507, )"
-            },
-            "OpenCvSharp4_.runtime.ubuntu.20.04-x64": {
-              "target": "Package",
-              "version": "[4.10.0.20240616, )"
+              "version": "[4.6.0.20220608, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

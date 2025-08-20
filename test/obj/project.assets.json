@@ -58,36 +58,12 @@
           }
         }
       },
-      "OpenCvSharp4.runtime.win/4.11.0.20250507": {
-        "type": "package",
-        "build": {
-          "build/net5.0/OpenCvSharp4.runtime.win.props": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg4110_64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/opencv_videoio_ffmpeg4110.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "OpenCvSharp4_.runtime.ubuntu.20.04-x64/4.10.0.20240616": {
+      "OpenCvSharp4.runtime.ubuntu.18.04-x64/4.6.0.20220608": {
         "type": "package",
         "runtimeTargets": {
-          "runtimes/ubuntu.22.04-x64/native/libOpenCvSharpExtern.so": {
+          "runtimes/ubuntu.18.04-x64/native/libOpenCvSharpExtern.so": {
             "assetType": "native",
-            "rid": "ubuntu.22.04-x64"
+            "rid": "ubuntu.18.04-x64"
           }
         }
       },
@@ -214,35 +190,16 @@
         "opencvsharp4.extensions.nuspec"
       ]
     },
-    "OpenCvSharp4.runtime.win/4.11.0.20250507": {
-      "sha512": "3PxMXyzR+pkL9UOx2PiBjZm+/iyCIu5D6OlA1sq9MH7oWrfvVnCXJlUYhIJv67F7SLUwUuGwXDIQBfdsL/54lg==",
+    "OpenCvSharp4.runtime.ubuntu.18.04-x64/4.6.0.20220608": {
+      "sha512": "peg3eKPtRRy/j1xAx/stvNrKSpi3E384gJyIWu8s1fNUO98ayJUqCN7OO39EUzD5dMccjdgoviI1QkHYiCLNUQ==",
       "type": "package",
-      "path": "opencvsharp4.runtime.win/4.11.0.20250507",
+      "path": "opencvsharp4.runtime.ubuntu.18.04-x64/4.6.0.20220608",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "build/net48/OpenCvSharp4.runtime.win.props",
-        "build/net5.0/OpenCvSharp4.runtime.win.props",
-        "build/netcoreapp/OpenCvSharp4.runtime.win.props",
-        "build/netstandard/OpenCvSharp4.runtime.win.props",
-        "opencvsharp4.runtime.win.4.11.0.20250507.nupkg.sha512",
-        "opencvsharp4.runtime.win.nuspec",
-        "runtimes/win-x64/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x64/native/opencv_videoio_ffmpeg4110_64.dll",
-        "runtimes/win-x86/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x86/native/opencv_videoio_ffmpeg4110.dll"
-      ]
-    },
-    "OpenCvSharp4_.runtime.ubuntu.20.04-x64/4.10.0.20240616": {
-      "sha512": "nw4Q8c/SnMl5PFEpQn/S93CGvUc8v7uH/n9qZbQKFk8hRP0a/aWLX29WcTEUCKHu6Vjrk6hVINrQ+EG+wx2dnw==",
-      "type": "package",
-      "path": "opencvsharp4_.runtime.ubuntu.20.04-x64/4.10.0.20240616",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "opencvsharp4_.runtime.ubuntu.20.04-x64.4.10.0.20240616.nupkg.sha512",
-        "opencvsharp4_.runtime.ubuntu.20.04-x64.nuspec",
-        "runtimes/ubuntu.22.04-x64/native/libOpenCvSharpExtern.so"
+        "opencvsharp4.runtime.ubuntu.18.04-x64.4.6.0.20220608.nupkg.sha512",
+        "opencvsharp4.runtime.ubuntu.18.04-x64.nuspec",
+        "runtimes/ubuntu.18.04-x64/native/libOpenCvSharpExtern.so"
       ]
     },
     "System.Drawing.Common/9.0.6": {
@@ -340,8 +297,7 @@
     "net8.0": [
       "OpenCvSharp4 >= 4.8.0.20230708",
       "OpenCvSharp4.Extensions >= 4.8.0.20230708",
-      "OpenCvSharp4.runtime.win >= 4.11.0.20250507",
-      "OpenCvSharp4_.runtime.ubuntu.20.04-x64 >= 4.10.0.20240616",
+      "OpenCvSharp4.runtime.ubuntu.18.04-x64 >= 4.6.0.20220608",
       "System.Drawing.Common >= 9.0.6"
     ]
   },
@@ -402,13 +358,9 @@
             "target": "Package",
             "version": "[4.8.0.20230708, )"
           },
-          "OpenCvSharp4.runtime.win": {
+          "OpenCvSharp4.runtime.ubuntu.18.04-x64": {
             "target": "Package",
-            "version": "[4.11.0.20250507, )"
-          },
-          "OpenCvSharp4_.runtime.ubuntu.20.04-x64": {
-            "target": "Package",
-            "version": "[4.10.0.20240616, )"
+            "version": "[4.6.0.20220608, )"
           },
           "System.Drawing.Common": {
             "target": "Package",

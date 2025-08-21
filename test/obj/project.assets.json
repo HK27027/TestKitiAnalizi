@@ -2,526 +2,199 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Microsoft.Win32.SystemEvents/7.0.0": {
+      "Magick.NET-Q16-AnyCPU/14.8.0": {
         "type": "package",
+        "dependencies": {
+          "Magick.NET.Core": "14.8.0"
+        },
         "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/netstandard20/Magick.NET-Q16-AnyCPU.targets": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "OpenCvSharp4/4.10.0.20240616": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/OpenCvSharp.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/OpenCvSharp.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenCvSharp4.Extensions/4.10.0.20240616": {
-        "type": "package",
-        "dependencies": {
-          "OpenCvSharp4": "4.10.0.20240616",
-          "System.Drawing.Common": "7.0.0"
-        },
-        "compile": {
-          "lib/net6.0/OpenCvSharp.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/OpenCvSharp.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenCvSharp4.runtime.win/4.10.0.20240616": {
-        "type": "package",
-        "build": {
-          "build/net5.0/OpenCvSharp4.runtime.win.props": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+          "runtimes/linux-arm64/native/Magick.Native-Q16-arm64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/Magick.Native-Q16-arm64.dll.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/Magick.Native-Q16-x64.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg4100_64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/opencv_videoio_ffmpeg4100.dll": {
+          "runtimes/win-x86/native/Magick.Native-Q16-x86.dll": {
             "assetType": "native",
             "rid": "win-x86"
           }
         }
       },
-      "System.Drawing.Common/7.0.0": {
+      "Magick.NET.Core/14.8.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
         "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
+          "lib/net8.0/Magick.NET.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
+          "lib/net8.0/Magick.NET.Core.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
         }
       }
     },
     "net8.0/linux-x64": {
-      "Microsoft.Win32.SystemEvents/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "OpenCvSharp4/4.10.0.20240616": {
+      "Magick.NET-Q16-AnyCPU/14.8.0": {
         "type": "package",
         "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "Magick.NET.Core": "14.8.0"
         },
         "compile": {
-          "lib/net6.0/OpenCvSharp.dll": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/OpenCvSharp.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenCvSharp4.Extensions/4.10.0.20240616": {
-        "type": "package",
-        "dependencies": {
-          "OpenCvSharp4": "4.10.0.20240616",
-          "System.Drawing.Common": "7.0.0"
-        },
-        "compile": {
-          "lib/net6.0/OpenCvSharp.Extensions.dll": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
             "related": ".xml"
           }
         },
-        "runtime": {
-          "lib/net6.0/OpenCvSharp.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenCvSharp4.runtime.win/4.10.0.20240616": {
-        "type": "package",
-        "build": {
-          "build/net5.0/OpenCvSharp4.runtime.win.props": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
+        "native": {
+          "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so": {}
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/netstandard20/Magick.NET-Q16-AnyCPU.targets": {}
         }
       },
-      "System.Memory/4.5.5": {
+      "Magick.NET.Core/14.8.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net8.0/Magick.NET.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net8.0/Magick.NET.Core.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
         }
       }
     },
     "net8.0/win-x64": {
-      "Microsoft.Win32.SystemEvents/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "OpenCvSharp4/4.10.0.20240616": {
+      "Magick.NET-Q16-AnyCPU/14.8.0": {
         "type": "package",
         "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "Magick.NET.Core": "14.8.0"
         },
         "compile": {
-          "lib/net6.0/OpenCvSharp.dll": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/OpenCvSharp.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenCvSharp4.Extensions/4.10.0.20240616": {
-        "type": "package",
-        "dependencies": {
-          "OpenCvSharp4": "4.10.0.20240616",
-          "System.Drawing.Common": "7.0.0"
-        },
-        "compile": {
-          "lib/net6.0/OpenCvSharp.Extensions.dll": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
             "related": ".xml"
           }
         },
-        "runtime": {
-          "lib/net6.0/OpenCvSharp.Extensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenCvSharp4.runtime.win/4.10.0.20240616": {
-        "type": "package",
         "native": {
-          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {},
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg4100_64.dll": {}
+          "runtimes/win-x64/native/Magick.Native-Q16-x64.dll": {}
         },
         "build": {
-          "build/net5.0/OpenCvSharp4.runtime.win.props": {}
+          "buildTransitive/netstandard20/Magick.NET-Q16-AnyCPU.targets": {}
         }
       },
-      "System.Drawing.Common/7.0.0": {
+      "Magick.NET.Core/14.8.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
         "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
+          "lib/net8.0/Magick.NET.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
+          "lib/net8.0/Magick.NET.Core.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
         }
       }
     }
   },
   "libraries": {
-    "Microsoft.Win32.SystemEvents/7.0.0": {
-      "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+    "Magick.NET-Q16-AnyCPU/14.8.0": {
+      "sha512": "8Qbn1X8A4HWb3PHu52FyNYJvrx04CEFO2VNCkyfo9Pax0LUYTwC8ZQh2OEzTQj4xDOE2jjzg5jygVdM/aenNkg==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/7.0.0",
+      "path": "magick.net-q16-anycpu/14.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
-        "lib/net462/Microsoft.Win32.SystemEvents.dll",
-        "lib/net462/Microsoft.Win32.SystemEvents.xml",
-        "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-        "microsoft.win32.systemevents.nuspec",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
-        "useSharedDesignerContext.txt"
+        "Magick.NET.icon.png",
+        "Notice.txt",
+        "build/netstandard20/Magick.NET-Q16-AnyCPU.targets",
+        "buildTransitive/netstandard20/Magick.NET-Q16-AnyCPU.targets",
+        "docs/Readme.md",
+        "lib/net8.0/Magick.NET-Q16-AnyCPU.dll",
+        "lib/net8.0/Magick.NET-Q16-AnyCPU.xml",
+        "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll",
+        "lib/netstandard20/Magick.NET-Q16-AnyCPU.xml",
+        "magick.net-q16-anycpu.14.8.0.nupkg.sha512",
+        "magick.net-q16-anycpu.nuspec",
+        "runtimes/linux-arm64/native/Magick.Native-Q16-arm64.dll.so",
+        "runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so",
+        "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so",
+        "runtimes/osx-arm64/native/Magick.Native-Q16-arm64.dll.dylib",
+        "runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib",
+        "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll",
+        "runtimes/win-x64/native/Magick.Native-Q16-x64.dll",
+        "runtimes/win-x86/native/Magick.Native-Q16-x86.dll"
       ]
     },
-    "OpenCvSharp4/4.10.0.20240616": {
-      "sha512": "+iaFSUq0Cp+B9s1sUqDwB3PvQ5HdWWvRE50WsAw1PL8smD3VZNbe0P786E4Yfu7LHM7jeqkulOwjk2CoihsZeg==",
+    "Magick.NET.Core/14.8.0": {
+      "sha512": "H5mrY7/vF9bz+rzCXiJvWnE4IrFQXNxaMWikfrwejFIqtsyDBigaR3U4x6KOZjbO8lo2/dXTuqoYfKgwC+QpJg==",
       "type": "package",
-      "path": "opencvsharp4/4.10.0.20240616",
+      "path": "magick.net.core/14.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net48/OpenCvSharp.dll",
-        "lib/net48/OpenCvSharp.xml",
-        "lib/net6.0/OpenCvSharp.dll",
-        "lib/net6.0/OpenCvSharp.xml",
-        "lib/netstandard2.0/OpenCvSharp.dll",
-        "lib/netstandard2.0/OpenCvSharp.xml",
-        "lib/netstandard2.1/OpenCvSharp.dll",
-        "lib/netstandard2.1/OpenCvSharp.xml",
-        "opencvsharp4.4.10.0.20240616.nupkg.sha512",
-        "opencvsharp4.nuspec"
-      ]
-    },
-    "OpenCvSharp4.Extensions/4.10.0.20240616": {
-      "sha512": "bECtlodf4yuyw04sSvp2nHHWh7REKHKNIN3B4AzqNHxg62nhe24DxvVzBdfi0Innji7TAoc2QIbOPePKZA3ZQg==",
-      "type": "package",
-      "path": "opencvsharp4.extensions/4.10.0.20240616",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net48/OpenCvSharp.Extensions.dll",
-        "lib/net48/OpenCvSharp.Extensions.xml",
-        "lib/net6.0/OpenCvSharp.Extensions.dll",
-        "lib/net6.0/OpenCvSharp.Extensions.xml",
-        "lib/netstandard2.0/OpenCvSharp.Extensions.dll",
-        "lib/netstandard2.0/OpenCvSharp.Extensions.xml",
-        "lib/netstandard2.1/OpenCvSharp.Extensions.dll",
-        "lib/netstandard2.1/OpenCvSharp.Extensions.xml",
-        "opencvsharp4.extensions.4.10.0.20240616.nupkg.sha512",
-        "opencvsharp4.extensions.nuspec"
-      ]
-    },
-    "OpenCvSharp4.runtime.win/4.10.0.20240616": {
-      "sha512": "dpQNIR6PpeB/oZM0e0fZpt9lOS3Htjm6ZjtOgLyxN7QwjRekbNevrmO8VbgezUoetk68CRwxYZGaymCm2vt8Sg==",
-      "type": "package",
-      "path": "opencvsharp4.runtime.win/4.10.0.20240616",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net48/OpenCvSharp4.runtime.win.props",
-        "build/net5.0/OpenCvSharp4.runtime.win.props",
-        "build/netcoreapp/OpenCvSharp4.runtime.win.props",
-        "build/netstandard/OpenCvSharp4.runtime.win.props",
-        "opencvsharp4.runtime.win.4.10.0.20240616.nupkg.sha512",
-        "opencvsharp4.runtime.win.nuspec",
-        "runtimes/win-x64/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x64/native/opencv_videoio_ffmpeg4100_64.dll",
-        "runtimes/win-x86/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x86/native/opencv_videoio_ffmpeg4100.dll"
-      ]
-    },
-    "System.Drawing.Common/7.0.0": {
-      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "type": "package",
-      "path": "system.drawing.common/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Drawing.Common.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Drawing.Common.dll",
-        "lib/net462/System.Drawing.Common.xml",
-        "lib/net6.0/System.Drawing.Common.dll",
-        "lib/net6.0/System.Drawing.Common.xml",
-        "lib/net7.0/System.Drawing.Common.dll",
-        "lib/net7.0/System.Drawing.Common.xml",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
-        "system.drawing.common.7.0.0.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Memory/4.5.5": {
-      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
-      "type": "package",
-      "path": "system.memory/4.5.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.5.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt"
+        "Copyright.txt",
+        "Magick.NET.icon.png",
+        "docs/Readme.md",
+        "lib/net8.0/Magick.NET.Core.dll",
+        "lib/net8.0/Magick.NET.Core.xml",
+        "lib/netstandard20/Magick.NET.Core.dll",
+        "lib/netstandard20/Magick.NET.Core.xml",
+        "magick.net.core.14.8.0.nupkg.sha512",
+        "magick.net.core.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "OpenCvSharp4 >= 4.10.0.20240616",
-      "OpenCvSharp4.Extensions >= 4.10.0.20240616",
-      "OpenCvSharp4.runtime.win >= 4.10.0.20240616"
+      "Magick.NET-Q16-AnyCPU >= 14.8.0"
     ]
   },
   "packageFolders": {
@@ -573,17 +246,9 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "OpenCvSharp4": {
+          "Magick.NET-Q16-AnyCPU": {
             "target": "Package",
-            "version": "[4.10.0.20240616, )"
-          },
-          "OpenCvSharp4.Extensions": {
-            "target": "Package",
-            "version": "[4.10.0.20240616, )"
-          },
-          "OpenCvSharp4.runtime.win": {
-            "target": "Package",
-            "version": "[4.10.0.20240616, )"
+            "version": "[14.8.0, )"
           }
         },
         "imports": [

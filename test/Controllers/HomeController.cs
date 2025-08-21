@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -9,10 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using test.Models;
-using OpenCvSharp;
-using Point = OpenCvSharp.Point;
-using Rect = OpenCvSharp.Rect;
-using Size = OpenCvSharp.Size;
+using ImageMagick;
+using ImageMagick.Drawing;
 
 namespace test.Controllers
 {
@@ -42,7 +39,6 @@ namespace test.Controllers
                     return Json(new { success = false, error = "Geçerli bir görüntü dosyasý seçiniz." });
                 }
 
-                // Dosyayý geçici olarak kaydet
                 var uploadsPath = Path.Combine(_environment.WebRootPath, "uploads");
                 if (!Directory.Exists(uploadsPath))
                     Directory.CreateDirectory(uploadsPath);
@@ -55,10 +51,8 @@ namespace test.Controllers
                     await imageFile.CopyToAsync(stream);
                 }
 
-                // Test kit analizi yap
                 var results = AnalyzeTestKit(filePath);
 
-                // Geçici dosyayý sil
                 if (System.IO.File.Exists(filePath))
                     System.IO.File.Delete(filePath);
 
@@ -75,113 +69,99 @@ namespace test.Controllers
         {
             var results = new List<string>();
 
-            using (Mat image = Cv2.ImRead(imagePath, ImreadModes.Color))
+            using (var image = new MagickImage(imagePath))
             {
-                if (image.Empty())
-                {
-                    throw new Exception("Görüntü yüklenemedi");
-                }
-
-                // Debug için resmi kaydet
                 var debugPath = Path.Combine(_environment.WebRootPath, "debug");
                 if (!Directory.Exists(debugPath))
                     Directory.CreateDirectory(debugPath);
 
-                // Görüntüyü 1920x1080'e yeniden boyutlandýr (eðer farklýysa)
-                Mat resizedImage = new Mat();
-                Cv2.Resize(image, resizedImage, new Size(1920, 1080));
+                // Görüntüyü 1920x1080'e yeniden boyutlandýr
+                image.Resize(1920, 1080);
 
-                // Sabit koordinatlarý kullan
                 var testBoxes = GetFixedTestBoxCoordinates();
 
-                // Debug: Kutucuklarý görüntü üzerinde iþaretle
-                Mat debugImage = resizedImage.Clone();
-                for (int i = 0; i < testBoxes.Count; i++)
+                // Debug: Kutucuklarý iþaretle
+                using (var debugImage = image.Clone())
                 {
-                    var box = testBoxes[i];
-                    Cv2.Rectangle(debugImage, box, new Scalar(0, 255, 255), 3); // Sarý çerçeve
-                    Cv2.PutText(debugImage, (i + 1).ToString(),
-                    new Point(box.X + 20, box.Y + 50),
-                        HersheyFonts.HersheySimplex, 2, new Scalar(0, 255, 255), 3);
+                    var drawables = new Drawables();
+                    drawables.StrokeColor(MagickColors.Yellow);
+                    drawables.StrokeWidth(3);
+                    drawables.FillColor(MagickColors.Transparent);
+                    drawables.Font("Arial");
+                    drawables.FontPointSize(40);
+
+                    for (int i = 0; i < testBoxes.Count; i++)
+                    {
+                        var box = testBoxes[i];
+                        drawables.Rectangle((double)box.X, (double)box.Y, (double)(box.X + box.Width), (double)(box.Y + box.Height));
+                        drawables.FillColor(MagickColors.Yellow);
+                        drawables.Text((double)(box.X + 20), (double)(box.Y + 50), (i + 1).ToString());
+                        drawables.FillColor(MagickColors.Transparent);
+                    }
+
+                    drawables.Draw(debugImage);
+                    debugImage.Write(Path.Combine(debugPath, "debug_boxes.jpg"));
                 }
-                Cv2.ImWrite(Path.Combine(debugPath, "debug_boxes.jpg"), debugImage);
 
                 // Her kutucuðu analiz et
                 for (int i = 0; i < testBoxes.Count && i < 6; i++)
                 {
                     var box = testBoxes[i];
-                    var result = AnalyzeTestBoxWithColor(resizedImage, box, i + 1, debugPath);
+                    var result = AnalyzeTestBox(image, box, i + 1, debugPath);
                     results.Add(result);
                 }
-
-                // Kaynaklarý temizle
-                resizedImage.Dispose();
-                debugImage.Dispose();
             }
 
             return results;
         }
 
-        private List<Rect> GetFixedTestBoxCoordinates()
+        private List<MagickGeometry> GetFixedTestBoxCoordinates()
         {
-            var boxes = new List<Rect>
+            return new List<MagickGeometry>
             {
-                new Rect(100, 200, 200, 600),   // 1. Kutucuk
-                new Rect(400, 200, 200, 600),   // 2. Kutucuk
-                new Rect(700, 200, 200, 600),   // 3. Kutucuk
-                new Rect(1000, 200, 200, 600),  // 4. Kutucuk
-                new Rect(1300, 200, 200, 600),  // 5. Kutucuk
-                new Rect(1600, 200, 200, 600)   // 6. Kutucuk
+                new MagickGeometry(100, 200, 200, 600),
+                new MagickGeometry(400, 200, 200, 600),
+                new MagickGeometry(700, 200, 200, 600),
+                new MagickGeometry(1000, 200, 200, 600),
+                new MagickGeometry(1300, 200, 200, 600),
+                new MagickGeometry(1600, 200, 200, 600)
             };
-
-            return boxes;
         }
 
-        private string AnalyzeTestBoxWithColor(Mat image, Rect box, int boxNumber, string debugPath)
+        private string AnalyzeTestBox(MagickImage image, MagickGeometry box, int boxNumber, string debugPath)
         {
             try
             {
                 // Kutucuk alanýný kýrp
-                Mat roi = new Mat(image, box);
-
-                // Debug için ROI'yi kaydet
-                Cv2.ImWrite(Path.Combine(debugPath, $"roi_{boxNumber}.jpg"), roi);
-
-                // Kutucuðu üst ve alt yarýya böl
-                int halfHeight = roi.Height / 2;
-                Rect topHalf = new Rect(0, 0, roi.Width, halfHeight);
-                Rect bottomHalf = new Rect(0, halfHeight, roi.Width, roi.Height - halfHeight);
-
-                Mat topRoi = new Mat(roi, topHalf);
-                Mat bottomRoi = new Mat(roi, bottomHalf);
-
-                // Debug için üst ve alt ROI'leri kaydet
-                Cv2.ImWrite(Path.Combine(debugPath, $"top_roi_{boxNumber}.jpg"), topRoi);
-                Cv2.ImWrite(Path.Combine(debugPath, $"bottom_roi_{boxNumber}.jpg"), bottomRoi);
-
-                // Her yarýda kýrmýzý/mor çizgi var mý kontrol et
-                bool hasTopLine = HasColoredLine(topRoi, boxNumber, "top", debugPath);
-                bool hasBottomLine = HasColoredLine(bottomRoi, boxNumber, "bottom", debugPath);
-
-                _logger.LogInformation($"Box {boxNumber}: Top={hasTopLine}, Bottom={hasBottomLine}");
-
-                // Kaynaklarý temizle
-                roi.Dispose();
-                topRoi.Dispose();
-                bottomRoi.Dispose();
-
-                // Kurallara göre sonuç belirle
-                if (hasTopLine && !hasBottomLine)
+                using (var roi = (MagickImage)image.Clone())
                 {
-                    return $"{boxNumber}. Pozitif";
-                }
-                else if (hasTopLine && hasBottomLine)
-                {
-                    return $"{boxNumber}. Negatif";
-                }
-                else
-                {
-                    return $"{boxNumber}. Geçersiz";
+                    roi.Crop(box);
+                    roi.Write(Path.Combine(debugPath, $"roi_{boxNumber}.jpg"));
+
+                    // Üst ve alt yarýya böl
+                    int halfHeight = (int)roi.Height / 2;
+
+                    using (var topRoi = (MagickImage)roi.Clone())
+                    using (var bottomRoi = (MagickImage)roi.Clone())
+                    {
+                        topRoi.Crop(new MagickGeometry(0, 0, (uint)roi.Width, (uint)halfHeight));
+                        bottomRoi.Crop(new MagickGeometry(0, (int)halfHeight, (uint)roi.Width, (uint)halfHeight));
+
+                        topRoi.Write(Path.Combine(debugPath, $"top_roi_{boxNumber}.jpg"));
+                        bottomRoi.Write(Path.Combine(debugPath, $"bottom_roi_{boxNumber}.jpg"));
+
+                        bool hasTopLine = HasLine(topRoi, boxNumber, "top", debugPath);
+                        bool hasBottomLine = HasLine(bottomRoi, boxNumber, "bottom", debugPath);
+
+                        _logger.LogInformation($"Box {boxNumber}: Top={hasTopLine}, Bottom={hasBottomLine}");
+
+                        if (hasTopLine && !hasBottomLine)
+                            return $"{boxNumber}. Pozitif";
+                        else if (hasTopLine && hasBottomLine)
+                            return $"{boxNumber}. Negatif";
+                        else
+                            return $"{boxNumber}. Geçersiz";
+                    }
                 }
             }
             catch (Exception ex)
@@ -191,130 +171,63 @@ namespace test.Controllers
             }
         }
 
-        private bool HasColoredLine(Mat roi, int boxNumber, string position, string debugPath)
+        private bool HasLine(MagickImage roi, int boxNumber, string position, string debugPath)
         {
             try
             {
-                // HSV color space'e çevir (daha iyi renk tespiti için)
-                Mat hsvImage = new Mat();
-                Cv2.CvtColor(roi, hsvImage, ColorConversionCodes.BGR2HSV);
-
-                // Kýrmýzý renk aralýklarý (HSV'de kýrmýzý iki aralýkta bulunur)
-                Mat redMask1 = new Mat();
-                Mat redMask2 = new Mat();
-                Mat purpleMask = new Mat();
-                Mat blackMask = new Mat();
-
-                // Kýrmýzý aralýk 1: 0-10
-                Cv2.InRange(hsvImage, new Scalar(0, 50, 50), new Scalar(10, 255, 255), redMask1);
-
-                // Kýrmýzý aralýk 2: 170-180
-                Cv2.InRange(hsvImage, new Scalar(170, 50, 50), new Scalar(180, 255, 255), redMask2);
-
-                // Mor aralýðý: 120-160
-                Cv2.InRange(hsvImage, new Scalar(120, 50, 50), new Scalar(160, 255, 255), purpleMask);
-
-                // Siyah aralýðý: Düþük V (Value) deðeri olan tüm renkler
-                Cv2.InRange(hsvImage, new Scalar(0, 0, 0), new Scalar(180, 255, 80), blackMask);
-
-                // Tüm maskeleri birleþtir
-                Mat combinedMask = new Mat();
-                Cv2.BitwiseOr(redMask1, redMask2, combinedMask);
-                Cv2.BitwiseOr(combinedMask, purpleMask, combinedMask);
-                Cv2.BitwiseOr(combinedMask, blackMask, combinedMask);
-
-                // Debug için maskeyi kaydet
-                Cv2.ImWrite(Path.Combine(debugPath, $"mask_{boxNumber}_{position}.jpg"), combinedMask);
-
-                // Morfolojik iþlemler (gürültüyü temizle, çizgileri güçlendir)
-                Mat kernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(3, 3));
-                Cv2.MorphologyEx(combinedMask, combinedMask, MorphTypes.Close, kernel);
-
-                // Yatay çizgileri güçlendirmek için özel kernel
-                Mat horizontalKernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(roi.Width / 4, 3));
-                Mat horizontalMask = new Mat();
-                Cv2.MorphologyEx(combinedMask, horizontalMask, MorphTypes.Open, horizontalKernel);
-
-                // Debug için horizontal mask'ý kaydet
-                Cv2.ImWrite(Path.Combine(debugPath, $"horizontal_mask_{boxNumber}_{position}.jpg"), horizontalMask);
-
-                // Contours bul
-                Point[][] contours;
-                HierarchyIndex[] hierarchy;
-                Cv2.FindContours(horizontalMask, out contours, out hierarchy, RetrievalModes.External, ContourApproximationModes.ApproxSimple);
-
-                // Çizgi kriterlerini kontrol et
-                for (int i = 0; i < contours.Length; i++)
+                // Clone iþlemi için explicit casting kullan
+                using (var processedImage = (MagickImage)roi.Clone())
                 {
-                    double area = Cv2.ContourArea(contours[i]);
-                    var boundingRect = Cv2.BoundingRect(contours[i]);
+                    // Kontrast artýr
+                    processedImage.Normalize();
+                    processedImage.Contrast();
 
-                    // Minimum alan kontrolü (ROI'nin %2'si)
-                    double minArea = roi.Width * roi.Height * 0.02;
+                    // Edge detection
+                    processedImage.Edge(1);
 
-                    // Yatay çizgi kontrolü (geniþlik > yükseklik * 3)
-                    bool isHorizontal = boundingRect.Width > boundingRect.Height * 3;
+                    // Threshold uygula
+                    processedImage.Threshold(new Percentage(50));
 
-                    // Minimum geniþlik kontrolü (ROI geniþliðinin %30'u)
-                    bool hasMinWidth = boundingRect.Width > roi.Width * 0.3;
+                    processedImage.Write(Path.Combine(debugPath, $"processed_{boxNumber}_{position}.jpg"));
 
-                    // Minimum yükseklik kontrolü (çok ince çizgiler için)
-                    bool hasMinHeight = boundingRect.Height >= 2;
-
-                    // Pozisyon kontrolü (çizgi ROI'nin ortalarýnda mý?)
-                    bool isInValidPosition = boundingRect.Y > roi.Height * 0.2 &&
-                                           boundingRect.Y + boundingRect.Height < roi.Height * 0.8;
-
-                    _logger.LogInformation($"Box {boxNumber} {position}: Area={area:F0}, MinArea={minArea:F0}, " +
-                                         $"Rect=({boundingRect.X},{boundingRect.Y},{boundingRect.Width},{boundingRect.Height}), " +
-                                         $"Horizontal={isHorizontal}, MinWidth={hasMinWidth}, MinHeight={hasMinHeight}, ValidPos={isInValidPosition}");
-
-                    if (area > minArea && isHorizontal && hasMinWidth && hasMinHeight && isInValidPosition)
+                    // Yatay çizgileri tespit et - basit morfoloji
+                    using (var horizontalMask = (MagickImage)processedImage.Clone())
                     {
-                        // Debug: Bulunan çizgiyi iþaretle
-                        Mat debugContour = roi.Clone();
-                        Cv2.Rectangle(debugContour, boundingRect, new Scalar(0, 255, 0), 2);
-                        Cv2.ImWrite(Path.Combine(debugPath, $"found_line_{boxNumber}_{position}.jpg"), debugContour);
+                        // Yatay yapýlarý güçlendir - morphology iþlemleri için kernel tanýmla
+                        var kernelSize = Math.Max(3, (int)roi.Width / 10);
 
-                        // Kaynaklarý temizle
-                        debugContour.Dispose();
+                        // Basit eþikleme ile yatay çizgileri tespit et
+                        var pixels = horizontalMask.GetPixels();
+                        int whitePixelCount = 0;
+                        int totalPixels = (int)(horizontalMask.Width * horizontalMask.Height);
 
-                        // Tüm Mat objelerini temizle
-                        hsvImage.Dispose();
-                        redMask1.Dispose();
-                        redMask2.Dispose();
-                        purpleMask.Dispose();
-                        blackMask.Dispose();
-                        combinedMask.Dispose();
-                        kernel.Dispose();
-                        horizontalKernel.Dispose();
-                        horizontalMask.Dispose();
+                        for (int y = 0; y < (int)horizontalMask.Height; y++)
+                        {
+                            for (int x = 0; x < (int)horizontalMask.Width; x++)
+                            {
+                                var pixel = pixels[x, y];
+                                var intensity = pixel.GetChannel(0); // R channel for grayscale
+                                if (intensity > Quantum.Max * 0.5) // Beyaz pixel
+                                {
+                                    whitePixelCount++;
+                                }
+                            }
+                        }
 
-                        return true;
+                        horizontalMask.Write(Path.Combine(debugPath, $"horizontal_{boxNumber}_{position}.jpg"));
+
+                        // Yatay çizgi varlýðýný kontrol et
+                        double whiteRatio = (double)whitePixelCount / totalPixels;
+
+                        _logger.LogInformation($"Box {boxNumber} {position}: White ratio = {whiteRatio:F3}");
+
+                        return whiteRatio > 0.1; // %10'dan fazla beyaz pixel
                     }
                 }
-
-                // Eðer contour bulunamadýysa, piksel yoðunluðu kontrol et
-                double whitePixelRatio = Cv2.CountNonZero(horizontalMask) / (double)(horizontalMask.Width * horizontalMask.Height);
-                _logger.LogInformation($"Box {boxNumber} {position}: White pixel ratio = {whitePixelRatio:F3}");
-
-                // Kaynaklarý temizle
-                hsvImage.Dispose();
-                redMask1.Dispose();
-                redMask2.Dispose();
-                purpleMask.Dispose();
-                blackMask.Dispose();
-                combinedMask.Dispose();
-                kernel.Dispose();
-                horizontalKernel.Dispose();
-                horizontalMask.Dispose();
-
-                // Eðer yeterince beyaz piksel varsa çizgi var kabul et
-                return whitePixelRatio > 0.05; // %5'ten fazla beyaz piksel
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Renk tespiti sýrasýnda hata - Box {boxNumber} {position}");
+                _logger.LogError(ex, $"Çizgi tespiti hatasý - Box {boxNumber} {position}");
                 return false;
             }
         }

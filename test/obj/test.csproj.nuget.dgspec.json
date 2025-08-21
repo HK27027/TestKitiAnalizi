@@ -51,15 +51,15 @@
           "dependencies": {
             "OpenCvSharp4": {
               "target": "Package",
-              "version": "[4.8.0.20230708, )"
+              "version": "[4.10.0.20240616, )"
             },
             "OpenCvSharp4.Extensions": {
               "target": "Package",
-              "version": "[4.8.0.20230708, )"
+              "version": "[4.10.0.20240616, )"
             },
             "OpenCvSharp4.runtime.win": {
               "target": "Package",
-              "version": "[4.8.0.20230708, )"
+              "version": "[4.10.0.20240616, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

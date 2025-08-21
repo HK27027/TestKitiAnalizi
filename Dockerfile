@@ -18,7 +18,7 @@ WORKDIR /src
 COPY . .
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
-
+RUN apt-get update && apt-get install -y libopencv-dev
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .

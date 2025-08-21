@@ -24,7 +24,7 @@
           }
         }
       },
-      "OpenCvSharp4/4.8.0.20230708": {
+      "OpenCvSharp4/4.10.0.20240616": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -41,10 +41,10 @@
           }
         }
       },
-      "OpenCvSharp4.Extensions/4.8.0.20230708": {
+      "OpenCvSharp4.Extensions/4.10.0.20240616": {
         "type": "package",
         "dependencies": {
-          "OpenCvSharp4": "4.8.0.20230708",
+          "OpenCvSharp4": "4.10.0.20240616",
           "System.Drawing.Common": "7.0.0"
         },
         "compile": {
@@ -58,7 +58,7 @@
           }
         }
       },
-      "OpenCvSharp4.runtime.win/4.8.0.20230708": {
+      "OpenCvSharp4.runtime.win/4.10.0.20240616": {
         "type": "package",
         "build": {
           "build/net5.0/OpenCvSharp4.runtime.win.props": {}
@@ -68,7 +68,7 @@
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg480_64.dll": {
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg4100_64.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
@@ -76,7 +76,7 @@
             "assetType": "native",
             "rid": "win-x86"
           },
-          "runtimes/win-x86/native/opencv_videoio_ffmpeg480.dll": {
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg4100.dll": {
             "assetType": "native",
             "rid": "win-x86"
           }
@@ -144,7 +144,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "OpenCvSharp4/4.8.0.20230708": {
+      "OpenCvSharp4/4.10.0.20240616": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -161,10 +161,10 @@
           }
         }
       },
-      "OpenCvSharp4.Extensions/4.8.0.20230708": {
+      "OpenCvSharp4.Extensions/4.10.0.20240616": {
         "type": "package",
         "dependencies": {
-          "OpenCvSharp4": "4.8.0.20230708",
+          "OpenCvSharp4": "4.10.0.20240616",
           "System.Drawing.Common": "7.0.0"
         },
         "compile": {
@@ -178,7 +178,7 @@
           }
         }
       },
-      "OpenCvSharp4.runtime.win/4.8.0.20230708": {
+      "OpenCvSharp4.runtime.win/4.10.0.20240616": {
         "type": "package",
         "build": {
           "build/net5.0/OpenCvSharp4.runtime.win.props": {}
@@ -246,7 +246,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "OpenCvSharp4/4.8.0.20230708": {
+      "OpenCvSharp4/4.10.0.20240616": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -263,10 +263,10 @@
           }
         }
       },
-      "OpenCvSharp4.Extensions/4.8.0.20230708": {
+      "OpenCvSharp4.Extensions/4.10.0.20240616": {
         "type": "package",
         "dependencies": {
-          "OpenCvSharp4": "4.8.0.20230708",
+          "OpenCvSharp4": "4.10.0.20240616",
           "System.Drawing.Common": "7.0.0"
         },
         "compile": {
@@ -280,11 +280,11 @@
           }
         }
       },
-      "OpenCvSharp4.runtime.win/4.8.0.20230708": {
+      "OpenCvSharp4.runtime.win/4.10.0.20240616": {
         "type": "package",
         "native": {
           "runtimes/win-x64/native/OpenCvSharpExtern.dll": {},
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg480_64.dll": {}
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg4100_64.dll": {}
         },
         "build": {
           "build/net5.0/OpenCvSharp4.runtime.win.props": {}
@@ -372,10 +372,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "OpenCvSharp4/4.8.0.20230708": {
-      "sha512": "MmZqvNUJuTUWQfkyXN1NOxJjx6JNfaedMOnY0dAdP5zgaKMAsxwwX5pkZl/F40JheSo3oMJhI7nhDC3kh7/ISQ==",
+    "OpenCvSharp4/4.10.0.20240616": {
+      "sha512": "+iaFSUq0Cp+B9s1sUqDwB3PvQ5HdWWvRE50WsAw1PL8smD3VZNbe0P786E4Yfu7LHM7jeqkulOwjk2CoihsZeg==",
       "type": "package",
-      "path": "opencvsharp4/4.8.0.20230708",
+      "path": "opencvsharp4/4.10.0.20240616",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -387,14 +387,14 @@
         "lib/netstandard2.0/OpenCvSharp.xml",
         "lib/netstandard2.1/OpenCvSharp.dll",
         "lib/netstandard2.1/OpenCvSharp.xml",
-        "opencvsharp4.4.8.0.20230708.nupkg.sha512",
+        "opencvsharp4.4.10.0.20240616.nupkg.sha512",
         "opencvsharp4.nuspec"
       ]
     },
-    "OpenCvSharp4.Extensions/4.8.0.20230708": {
-      "sha512": "nMX2ZFI+cAIp7q2UoaHFSzBD9xJgr/TyZ9dDOuDS0K2BNCdOYqT8TbXWIGCIXpcLZLn2seoy5r4ZlGaJsyREYg==",
+    "OpenCvSharp4.Extensions/4.10.0.20240616": {
+      "sha512": "bECtlodf4yuyw04sSvp2nHHWh7REKHKNIN3B4AzqNHxg62nhe24DxvVzBdfi0Innji7TAoc2QIbOPePKZA3ZQg==",
       "type": "package",
-      "path": "opencvsharp4.extensions/4.8.0.20230708",
+      "path": "opencvsharp4.extensions/4.10.0.20240616",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -406,14 +406,14 @@
         "lib/netstandard2.0/OpenCvSharp.Extensions.xml",
         "lib/netstandard2.1/OpenCvSharp.Extensions.dll",
         "lib/netstandard2.1/OpenCvSharp.Extensions.xml",
-        "opencvsharp4.extensions.4.8.0.20230708.nupkg.sha512",
+        "opencvsharp4.extensions.4.10.0.20240616.nupkg.sha512",
         "opencvsharp4.extensions.nuspec"
       ]
     },
-    "OpenCvSharp4.runtime.win/4.8.0.20230708": {
-      "sha512": "V9zbVQXazSSoEG04nF1KEkxfY62WMQAcKAlDe7xgkNErY7WQZzEcj8dMEuHXQMaDr45jPvrJi50SQroi+w4wNw==",
+    "OpenCvSharp4.runtime.win/4.10.0.20240616": {
+      "sha512": "dpQNIR6PpeB/oZM0e0fZpt9lOS3Htjm6ZjtOgLyxN7QwjRekbNevrmO8VbgezUoetk68CRwxYZGaymCm2vt8Sg==",
       "type": "package",
-      "path": "opencvsharp4.runtime.win/4.8.0.20230708",
+      "path": "opencvsharp4.runtime.win/4.10.0.20240616",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -421,12 +421,12 @@
         "build/net5.0/OpenCvSharp4.runtime.win.props",
         "build/netcoreapp/OpenCvSharp4.runtime.win.props",
         "build/netstandard/OpenCvSharp4.runtime.win.props",
-        "opencvsharp4.runtime.win.4.8.0.20230708.nupkg.sha512",
+        "opencvsharp4.runtime.win.4.10.0.20240616.nupkg.sha512",
         "opencvsharp4.runtime.win.nuspec",
         "runtimes/win-x64/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x64/native/opencv_videoio_ffmpeg480_64.dll",
+        "runtimes/win-x64/native/opencv_videoio_ffmpeg4100_64.dll",
         "runtimes/win-x86/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x86/native/opencv_videoio_ffmpeg480.dll"
+        "runtimes/win-x86/native/opencv_videoio_ffmpeg4100.dll"
       ]
     },
     "System.Drawing.Common/8.0.0": {
@@ -520,9 +520,9 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "OpenCvSharp4 >= 4.8.0.20230708",
-      "OpenCvSharp4.Extensions >= 4.8.0.20230708",
-      "OpenCvSharp4.runtime.win >= 4.8.0.20230708",
+      "OpenCvSharp4 >= 4.10.0.20240616",
+      "OpenCvSharp4.Extensions >= 4.10.0.20240616",
+      "OpenCvSharp4.runtime.win >= 4.10.0.20240616",
       "System.Drawing.Common >= 8.0.0"
     ]
   },
@@ -577,15 +577,15 @@
         "dependencies": {
           "OpenCvSharp4": {
             "target": "Package",
-            "version": "[4.8.0.20230708, )"
+            "version": "[4.10.0.20240616, )"
           },
           "OpenCvSharp4.Extensions": {
             "target": "Package",
-            "version": "[4.8.0.20230708, )"
+            "version": "[4.10.0.20240616, )"
           },
           "OpenCvSharp4.runtime.win": {
             "target": "Package",
-            "version": "[4.8.0.20230708, )"
+            "version": "[4.10.0.20240616, )"
           },
           "System.Drawing.Common": {
             "target": "Package",

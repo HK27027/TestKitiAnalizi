@@ -14,16 +14,13 @@ RUN dotnet publish -c Release -r linux-x64 --self-contained false -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
-# OpenCV bağımlılıklarını kur
+
 RUN apt-get update && apt-get install -y \
-    libopencv-dev \
-    libgdiplus \
-    libc6-dev \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    libglib2.0-0 \
-    && rm -rf /var/lib/apt/lists/*
+    fonts-dejavu-core \
+    fonts-liberation \
+    fontconfig \
+    && rm -rf /var/lib/apt/lists/* \
+    && fc-cache -fv
 
 # Build edilen dosyaları kopyala
 COPY --from=build /app .

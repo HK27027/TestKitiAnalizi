@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "test\\test.csproj",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeToolTip": "test\\test.csproj",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAuwBYAAABSAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwCgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-20T13:33:15.517Z",
               "EditorCaption": ""
@@ -63,7 +63,8 @@
               "RelativeToolTip": "test\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T12:54:07.798Z"
+              "WhenOpened": "2025-08-19T12:54:07.798Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -75,7 +76,8 @@
               "RelativeToolTip": "test\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-19T12:54:03.407Z"
+              "WhenOpened": "2025-08-19T12:54:03.407Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -87,7 +89,8 @@
               "RelativeToolTip": "test\\Dockerfile",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-19T12:53:46.943Z"
+              "WhenOpened": "2025-08-19T12:53:46.943Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,7 +115,8 @@
               "RelativeToolTip": "test\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAANwCAAAAAAAAAAAwwP0CAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T23:09:41.614Z"
+              "WhenOpened": "2025-05-18T23:09:41.614Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -28,7 +28,7 @@
 	<ItemGroup Condition="$([MSBuild]::IsOsPlatform('Linux'))">
 		<PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
 		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.10.0.20240616" />
-		<PackageReference Include="OpenCvSharp4.runtime.ubuntu.22.04-x64" Version="4.10.0.20240616" />
+		<PackageReference Include="OpenCvSharp4_.runtime.ubuntu.20.04-x64" Version="4.10.0.20240616" />
 	</ItemGroup>
 
 	<!-- Development (IntelliSense) -->
@@ -36,4 +36,5 @@
 		<PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
 		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.10.0.20240616" />
 	</ItemGroup>
+
 </Project>

@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "test\\test.csproj",
               "ToolTip": "C:\\Users\\H\u00FCseyin\\Documents\\GitHub\\TestKitiAnalizi\\test\\test.csproj",
               "RelativeToolTip": "test\\test.csproj",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAiwCoAAAAKAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAewCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-20T13:33:15.517Z",
               "EditorCaption": ""
@@ -99,8 +99,7 @@
               "RelativeToolTip": "test\\Controllers\\HomeController.cs",
               "ViewState": "AQIAACYBAAAAAAAAAAAgwC4BAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:18:50.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T12:18:50.282Z"
             },
             {
               "$type": "Document",

@@ -2,7 +2,7 @@
 WORKDIR /app
 EXPOSE 80
 
-# OpenCV ve libgdiplus bağımlılıklarını yükle
+# OpenCV ve libgdiplus bağımlılıklarını yükle (Ubuntu 22.04 tabanlı)
 RUN apt-get update && apt-get install -y \
     libgdiplus \
     libc6-dev \
